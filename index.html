@@ -101,9 +101,9 @@
         .resume-section { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding: 100px 0; border-bottom: 1px solid var(--line); }
         .section-header { position: sticky; top: 100px; height: fit-content; z-index: 2; }
         .section-title { font-size: 2.5rem; letter-spacing: -0.02em; margin-bottom: 20px; }
-        .resume-entry { display: grid; grid-template-columns: 80px 1fr; gap: 30px; padding: 30px 0; border-top: 1px solid var(--line); transition: opacity 0.3s; }
+        .resume-entry { display: grid; grid-template-columns: 132px 1fr; gap: 30px; padding: 30px 0; border-top: 1px solid var(--line); transition: opacity 0.3s; }
         .resume-entry:hover { opacity: 0.8; }
-        .year-label { font-family: var(--font-tech); color: var(--dim); font-size: 11px; padding-top: 5px; }
+        .year-label { font-family: var(--font-tech); color: var(--dim); font-size: 11px; padding-top: 5px; white-space: nowrap; }
         .entry-content h3 { font-size: 18px; font-weight: 500; margin-bottom: 4px; }
         .entry-content h4 { font-size: 13px; color: #888; margin-bottom: 15px; font-weight: 400; }
         .entry-content p { font-size: 13px; line-height: 1.6; color: #aaa; margin-bottom: 15px; font-weight: 300; }
@@ -1244,6 +1244,7 @@
             background: rgba(255,255,255,0.02);
             border: 1px solid rgba(255,255,255,0.05);
             position: relative;
+            font-family: var(--font-main);
         }
 
         .switcher-item {
@@ -1259,7 +1260,13 @@
 
         .switcher-item.active { color: #fff; }
         .switcher-item .label { font-size: 11px; font-weight: 500; }
-        .switcher-item .count { font-size: 10px; margin-left: 2px; }
+        .switcher-item .count { font-size: 10px; margin-left: 2px; font-family: var(--font-main); font-style: normal; font-weight: 500; }
+
+        /* Temporarily archive the Writing module without deleting its structure. */
+        .writing-section,
+        #article-view {
+            display: none !important;
+        }
 
         .switcher-item.active::after {
             content: '';
@@ -1338,7 +1345,6 @@
             <div class="nav-links">
                 <a href="#work"><span data-lang="en">PROJECTS</span><span data-lang="cn">项目作品</span></a>
                 <a href="#exp"><span data-lang="en">EXPERIENCE</span><span data-lang="cn">工作经历</span></a>
-                <a href="#writing"><span data-lang="en">WRITING</span><span data-lang="cn">写作</span></a>
             </div>
         </nav>
 
@@ -1371,7 +1377,7 @@
                 <div class="resume-entry">
                     <div class="year-label">2023.4 - 2025.7</div>
                     <div class="entry-content">
-                        <h3><span data-lang="en">Shanghai Saiyou Cloud Communications(SUBMAIL)</span><span data-lang="cn">上海赛邮云通信(SUBMAIL)</span></h3>
+                        <h3><span data-lang="en">Shanghai Saiyou Cloud Communications</span><span data-lang="cn">上海赛邮云通信</span></h3>
                         <h4><span data-lang="en">Product Manager & Interaction Designer</span><span data-lang="cn">产品经理 / 交互设计师</span></h4>
 
                         <div class="company-projects">
@@ -1406,7 +1412,7 @@
             </div>
             <div class="resume-list">
                 <div class="resume-entry edu-entry edu-entry--polyu">
-                    <div class="year-label">2025.9 - 至今</div>
+                    <div class="year-label"><span data-lang="en">2025.9 - Present</span><span data-lang="cn">2025.9 - 至今</span></div>
                     <div class="entry-content">
                         <h3><span data-lang="en">The Hong Kong Polytechnic University</span><span data-lang="cn">香港理工大学</span></h3>
                         <h4><span data-lang="en">Master of Design (Smart Service Design)</span><span data-lang="cn">设计学硕士（智能服务设计）</span></h4>
@@ -1480,22 +1486,22 @@
         <section id="work" class="works-section">
             <div class="project-header-section" style="margin-bottom: 40px;">
                 <h2 class="section-title"><span data-lang="en">Project<br>Portfolio</span><span data-lang="cn">项目<br>作品集</span></h2>
-                <div class="project-switcher-container tech-font">
+                <div class="project-switcher-container">
                     <div class="switcher-item active" data-part="all" onclick="switchProjectPart('all')">
                         <span class="label"><span data-lang="en">ALL</span><span data-lang="cn">全部</span></span>
-                        <span class="count" style="font-family: var(--font-serif); color: var(--fg); font-weight: 400; font-style: italic;">(09)</span>
+                        <span class="count" style="color: var(--fg);">(09)</span>
                     </div>
                     <div class="switcher-item" data-part="part1" onclick="switchProjectPart('part1')">
                         <span class="label"><span data-lang="en">PART 1</span><span data-lang="cn">part1</span></span>
-                        <span class="count" style="font-family: var(--font-serif); color: var(--dim); font-weight: 400; font-style: italic;">(04)</span>
+                        <span class="count" style="color: var(--dim);">(04)</span>
                     </div>
                     <div class="switcher-item" data-part="part2" onclick="switchProjectPart('part2')">
                         <span class="label"><span data-lang="en">PART 2</span><span data-lang="cn">part2</span></span>
-                        <span class="count" style="font-family: var(--font-serif); color: var(--dim); font-weight: 400; font-style: italic;">(04)</span>
+                        <span class="count" style="color: var(--dim);">(04)</span>
                     </div>
                     <div class="switcher-item" data-part="part3" onclick="switchProjectPart('part3')">
                         <span class="label"><span data-lang="en">PART 3</span><span data-lang="cn">part3</span></span>
-                        <span class="count" style="font-family: var(--font-serif); color: var(--dim); font-weight: 400; font-style: italic;">(01)</span>
+                        <span class="count" style="color: var(--dim);">(01)</span>
                     </div>
                 </div>
             </div>
