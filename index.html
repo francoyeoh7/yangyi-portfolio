@@ -219,6 +219,48 @@
             object-position: 50% 50%;
             transform: scale(1.12) translateX(4%);
         }
+
+        .footer-shell {
+            padding: 100px 0;
+            border-top: 1px solid var(--line);
+            margin-top: 100px;
+        }
+        .footer-contact-list {
+            margin-top: 22px;
+            display: grid;
+            gap: 14px;
+            max-width: 720px;
+        }
+        .footer-contact-item {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-contact-label {
+            min-width: 74px;
+            font-family: var(--font-tech);
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #5d5d5d;
+        }
+        .footer-contact-value,
+        .footer-contact-value a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-contact-value--email a {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            letter-spacing: -0.03em;
+        }
+        .footer-contact-value--wechat {
+            font-family: var(--font-tech);
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+            color: #c8c8c8;
+        }
         .work-item:hover .work-img { transform: scale(1.05); filter: grayscale(0%); }
         .work-item:hover .work-img--sf-cover { transform: scale(1.17) translateX(4%); }
         /* --- 优化后的项目卡片信息层级：提升屏效与精致度 --- */
@@ -1550,6 +1592,27 @@
                 margin-left: 0;
                 transform: none;
             }
+
+            .footer-shell {
+                padding: 72px 0;
+                margin-top: 72px;
+            }
+
+            .footer-contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .footer-contact-value--email a {
+                font-size: 1.24rem;
+                word-break: break-word;
+            }
+
+            .footer-contact-value--wechat {
+                font-size: 0.94rem;
+                letter-spacing: 0.1em;
+            }
         }
 
         /* --- Redesigned Project Switcher Styles --- */
@@ -1706,7 +1769,7 @@
                                     <span class="c-project-bullet"></span>
                                     <span>2023.12</span>
                                 </div>
-                                <h5 class="c-project-title"><span data-lang="en">International Gateway Backend Design</span><span data-lang="cn">International Gateway 后台体验重构</span></h5>
+                                <h5 class="c-project-title"><span data-lang="en">SUBMAIL International Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h5>
                                 <p class="c-project-desc"><span data-lang="en">Addressing the pain points of cumbersome backend operations and disorganized data presentation for international SMS services, I spearheaded a comprehensive overhaul of the platform's interaction and visual design. Through user journey analysis, I redefined the interaction logic for channel management and top-up settlement, while designing a clear Webhook configuration interface. This initiative reduced the completion time of the core task and also established a reusable component library.</span><span data-lang="cn">针对国际短信服务后台操作繁琐、数据展示混乱等问题，我主导完成了平台的交互与视觉整体重构。通过梳理用户旅程，我重新定义了通道管理、充值结算等核心流程的交互逻辑，并设计了更清晰的 Webhook 配置界面。这次改版不仅缩短了关键任务的完成路径，也沉淀出一套可复用的后台组件规范。</span></p>
                             </div>
 
@@ -1861,7 +1924,7 @@
                 </div>
                 <div class="work-item" onclick="openProject('submail')">
                     <div class="work-img-container"><img src="/projects/submail/submailfengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">09</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">International Network Management<br>Console Iteration</span><span data-lang="cn">国际网管后台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Backend / Cloud Communications</span><span data-lang="cn">B端后台 / 云通信</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">09</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
                 </div>
             </div>
 
@@ -1906,7 +1969,7 @@
             <div class="work-grid work-grid-panel" data-part="part3">
                 <div class="work-item" onclick="openProject('submail')">
                     <div class="work-img-container"><img src="/projects/submail/submailfengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">09</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">International Network Management<br>Console Iteration</span><span data-lang="cn">国际网管后台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Backend / Cloud Communications</span><span data-lang="cn">B端后台 / 云通信</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">09</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
                 </div>
             </div>
         </section>
@@ -1957,9 +2020,20 @@
             
         </section>
 
-        <footer style="padding: 100px 0; border-top: 1px solid var(--line); margin-top: 100px;">
+        <footer class="footer-shell">
             <div class="tech-font" style="color: #444;"><span data-lang="en">CONTACT</span><span data-lang="cn">联系方式</span></div>
-            <a href="mailto:francoyeoh7@gmail.com" style="font-size: 2rem; color: #fff; text-decoration: none; margin-top: 20px; display: block;">francoyeoh7@gmail.com</a>
+            <div class="footer-contact-list">
+                <div class="footer-contact-item">
+                    <div class="footer-contact-label">EMAIL</div>
+                    <div class="footer-contact-value footer-contact-value--email">
+                        <a href="mailto:francoyeoh7@gmail.com">francoyeoh7@gmail.com</a>
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-label"><span data-lang="en">WECHAT</span><span data-lang="cn">微信</span></div>
+                    <div class="footer-contact-value footer-contact-value--wechat">KOA0095</div>
+                </div>
+            </div>
         </footer>
     </div>
 
@@ -2156,8 +2230,8 @@
             },
             submail: {
                 output: {
-                    en: 'International network management backend system',
-                    cn: '国际网管后台系统'
+                    en: 'International gateway platform',
+                    cn: '国际网关平台'
                 },
                 tags: [
                     { en: 'B2B Product Iteration', cn: 'TOB版本迭代' },
@@ -2813,17 +2887,17 @@
                 heroImage: submailProjectCoverImage,
                 heroTheme: 'p-hero-theme--submail',
                 kicker: {
-                    en: 'CLOUD COMMUNICATION BACKEND CASE STUDY',
-                    cn: '云通信后台案例'
+                    en: 'CLOUD COMMUNICATION PLATFORM CASE STUDY',
+                    cn: '云通信平台案例'
                 },
-                title: 'International Network Management Console Iteration',
-                titleCn: '国际网管后台迭代',
-                titleHtml: '<span>International Network</span><span>Management Console</span><span>Iteration</span>',
-                titleHtmlCn: '<span>国际网管</span><span>后台</span><span>迭代</span>',
+                title: 'SUBMAIL International Gateway Platform Iteration',
+                titleCn: 'SUBMAIL国际网关平台迭代',
+                titleHtml: '<span>SUBMAIL International</span><span>Gateway Platform</span><span>Iteration</span>',
+                titleHtmlCn: '<span>SUBMAIL国际</span><span>网关平台</span><span>迭代</span>',
                 meta: [
                     {
                         label: { en: 'FOCUS', cn: '方向' },
-                        value: { en: 'B2B Backend / Cloud Communications', cn: 'B端后台 / 云通信' }
+                        value: { en: 'B2B Platform / Cloud Communications', cn: 'B端平台 / 云通信' }
                     },
                     {
                         label: { en: 'FORMAT', cn: '形式' },
@@ -2832,9 +2906,9 @@
                 ],
                 content: () => buildGalleryProjectContent(
                     submailGalleryImages,
-                    { en: 'International Network Management Console Iteration', cn: '国际网管后台迭代' },
-                    'This project documents the iteration of an international network management backend for cloud communications operations. The redesign focused on clarifying system architecture, streamlining enterprise workflows, and refining interaction patterns across key management tasks to improve daily operational efficiency.',
-                    '本项目记录了一套面向云通信业务的国际网管后台迭代过程。设计重点在于梳理系统架构、优化企业级工作流，并细化关键管理任务中的交互模式，从而提升日常运营效率。',
+                    { en: 'SUBMAIL International Gateway Platform Iteration', cn: 'SUBMAIL国际网关平台迭代' },
+                    'This project documents the iteration of SUBMAIL\'s international gateway platform for cloud communications operations. The redesign focused on clarifying system architecture, streamlining enterprise workflows, and refining interaction patterns across key management tasks to improve daily operational efficiency.',
+                    '本项目记录了 SUBMAIL 国际网关平台在云通信业务场景中的迭代过程。设计重点在于梳理系统架构、优化企业级工作流，并细化关键管理任务中的交互模式，从而提升日常运营效率。',
                     { galleryClass: 'gallery-balanced' }
                 )
             }
