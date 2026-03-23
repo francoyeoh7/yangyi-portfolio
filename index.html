@@ -791,7 +791,11 @@
             border-right: none;
             box-shadow: 0 20px 48px rgba(0,0,0,0.2);
         }
-        .project-overview-copy { max-width: 60ch; color: #b8b8b8; }
+        .project-overview-copy {
+            max-width: 68ch;
+            margin-bottom: 0;
+            color: #b8b8b8;
+        }
         .project-overview-copy.is-placeholder { color: #8f8f8f; }
         .project-overview-block { max-width: 68ch; }
         .project-overview-copy.is-compact {
@@ -803,21 +807,30 @@
         .project-overview-copy.is-collapsed {
             display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 4;
+            -webkit-line-clamp: 3;
             overflow: hidden;
+            text-overflow: ellipsis;
         }
         .project-overview-toggle {
-            margin-top: 16px;
-            padding: 0;
-            border: 0;
-            background: transparent;
-            color: #9fe9e4;
+            margin-top: 14px;
+            padding: 6px 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.025);
+            color: #c6d8d8;
             font-family: var(--font-tech);
-            font-size: 11px;
-            letter-spacing: 0.08em;
+            font-size: 10px;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
             cursor: pointer;
+            transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
         }
+        .project-overview-toggle:hover {
+            border-color: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+        }
+        .project-overview-toggle[hidden] { display: none; }
         .project-overview-toggle .toggle-label--collapse { display: none; }
         .project-overview-block.is-expanded .project-overview-toggle .toggle-label--expand { display: none; }
         .project-overview-block.is-expanded .project-overview-toggle .toggle-label--collapse { display: inline; }
@@ -1891,6 +1904,92 @@
             `;
         }
 
+        const projectOverviewToggleLabels = `
+            <span class="toggle-label--expand" data-lang="en">Show All</span>
+            <span class="toggle-label--expand" data-lang="cn">展示全部</span>
+            <span class="toggle-label--collapse" data-lang="en">Show Less</span>
+            <span class="toggle-label--collapse" data-lang="cn">收起</span>
+        `;
+
+        function createProjectOverviewToggle() {
+            const button = document.createElement('button');
+            button.className = 'project-overview-toggle';
+            button.type = 'button';
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('onclick', 'toggleProjectOverview(this)');
+            button.innerHTML = projectOverviewToggleLabels;
+            return button;
+        }
+
+        function queueProjectOverviewSync() {
+            requestAnimationFrame(() => requestAnimationFrame(syncProjectOverviewBlocks));
+        }
+
+        function enhanceProjectOverviews() {
+            const overviewCopies = Array.from(projectContent.querySelectorAll('.project-overview-copy'));
+            overviewCopies.forEach((copy) => {
+                let overviewBlock = copy.closest('.project-overview-block');
+                if (!overviewBlock) {
+                    overviewBlock = document.createElement('div');
+                    overviewBlock.className = 'project-overview-block';
+                    copy.parentNode.insertBefore(overviewBlock, copy);
+                    overviewBlock.appendChild(copy);
+                }
+
+                copy.classList.add('is-compact', 'is-collapsed');
+                overviewBlock.classList.remove('is-expanded');
+
+                let toggle = overviewBlock.querySelector('.project-overview-toggle');
+                if (!toggle) {
+                    toggle = createProjectOverviewToggle();
+                    overviewBlock.appendChild(toggle);
+                } else {
+                    toggle.className = 'project-overview-toggle';
+                    toggle.type = 'button';
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.setAttribute('onclick', 'toggleProjectOverview(this)');
+                    toggle.innerHTML = projectOverviewToggleLabels;
+                    toggle.hidden = false;
+                }
+            });
+
+            queueProjectOverviewSync();
+        }
+
+        function syncProjectOverviewBlocks() {
+            if (!projectView || projectView.style.display === 'none') return;
+
+            const overviewBlocks = Array.from(projectContent.querySelectorAll('.project-overview-block'));
+            overviewBlocks.forEach((overviewBlock) => {
+                const copy = overviewBlock.querySelector('.project-overview-copy');
+                const toggle = overviewBlock.querySelector('.project-overview-toggle');
+                if (!copy || !toggle) return;
+
+                const wasExpanded = overviewBlock.classList.contains('is-expanded');
+                toggle.hidden = false;
+                copy.classList.add('is-collapsed');
+
+                const isOverflowing = copy.scrollHeight > copy.clientHeight + 1;
+                if (!isOverflowing) {
+                    overviewBlock.classList.remove('is-expanded');
+                    copy.classList.remove('is-collapsed');
+                    toggle.hidden = true;
+                    toggle.setAttribute('aria-expanded', 'false');
+                    return;
+                }
+
+                if (wasExpanded) {
+                    overviewBlock.classList.add('is-expanded');
+                    copy.classList.remove('is-collapsed');
+                    toggle.setAttribute('aria-expanded', 'true');
+                } else {
+                    overviewBlock.classList.remove('is-expanded');
+                    copy.classList.add('is-collapsed');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
         const projectDetails = {
             default: {
                 heroImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80',
@@ -2390,6 +2489,7 @@
                 </div>
             `;
             projectContent.innerHTML = typeof project.content === 'function' ? project.content() : project.content;
+            enhanceProjectOverviews();
         }
 
         function toggleProjectOverview(button) {
@@ -2521,7 +2621,10 @@
         syncLanguageUI();
         syncEduBackgroundBands();
 
-        window.addEventListener('resize', syncEduBackgroundBands);
+        window.addEventListener('resize', () => {
+            syncEduBackgroundBands();
+            queueProjectOverviewSync();
+        });
 
         // Scroll Logic
         projectView.addEventListener('scroll', () => {
@@ -2540,6 +2643,7 @@
             projectView.scrollTop = 0;
             progressBar.style.width = '0%';
             projectView.style.display = 'block';
+            queueProjectOverviewSync();
             updateProjectTopButton();
             const tl = gsap.timeline({ onComplete: updateProjectImageReveal });
             tl.to(homeView, { scale: 0.95, filter: 'brightness(0.2)', duration: 0.8, ease: 'power3.inOut' });
