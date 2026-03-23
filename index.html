@@ -2055,9 +2055,9 @@
                                 <span data-lang="en">Project Overview.</span>
                                 <span data-lang="cn">项目概述。</span>
                             </h2>
-                            <p class="case-p project-overview-copy is-placeholder">
-                                <span data-lang="en">Reserved for your concise summary of the project background, challenge, design strategy, and outcome.</span>
-                                <span data-lang="cn">这里预留给你的项目概述，你之后可以直接补充项目背景、关键问题、设计策略和最终结果。</span>
+                            <p class="case-p project-overview-copy">
+                                <span data-lang="en">SF Crossgo is an innovative service design and business restructuring proposal built around the growing pattern of Hong Kong residents traveling northbound for consumption. Through a service blueprint that combines mall-based forward warehouses, cross-border drone trunk delivery, and local last-mile distribution, the project creates a full-chain closed-loop shopping experience. From a service design perspective, it responds directly to user pain points such as the burden of carrying large purchases and the need to preserve fresh food after bulk shopping, seamlessly connecting fragmented offline retail and cross-border logistics. On the interaction side, users only need to scan and store purchases in an intelligent locker through the app, while the system assists with restricted-item screening and order tracking, significantly reducing operational friction and customs compliance risk. Strategically, the project not only offers consumers a hands-free premium experience, but also improves conversion in physical retail districts and opens a commercially meaningful low-altitude economy scenario for SF’s drone business, ultimately building a win-win ecosystem across consumers, retailers, and logistics platforms.</span>
+                                <span data-lang="cn">SF Crossgo 是一个基于港人北上消费场景的创新服务设计与商业重构项目，旨在通过商场前置仓、无人机跨境干线与本地同城配送所组成的业务蓝图，打造全链路闭环的跨境购物体验。从服务设计视角看，该项目精准切入了用户大宗采购后大件行李负担与生鲜保冷等用户旅程痛点，将原本割裂的线下零售与跨境物流无缝衔接。在产品交互层面，用户仅需通过 App 扫码将商品存入商场智能柜，系统便可智能辅助完成违禁品筛查与订单追踪，大幅降低操作摩擦与海关合规风险。从产品商业策略来看，这不仅为消费者提供了解放双手的高品质体验，也有效提升了实体商圈的客单转化率，同时为顺丰开辟出极具商业价值的低空经济落地场景，最终构建起消费者、零售商与物流平台三方共赢的生态闭环。</span>
                             </p>
                         </div>
                     </div>
@@ -2102,9 +2102,9 @@
                                 <span data-lang="en">Project Overview.</span>
                                 <span data-lang="cn">项目概述。</span>
                             </h2>
-                            <p class="case-p project-overview-copy is-placeholder">
-                                <span data-lang="en">Reserved for your concise summary of the urban research question, restorative strategy, immersive experience, and design outcome.</span>
-                                <span data-lang="cn">这里预留给你的项目概述，你之后可以直接补充城市研究问题、疗愈性设计策略、沉浸式体验方案和最终成果。</span>
+                            <p class="case-p project-overview-copy">
+                                <span data-lang="en">This project is a situated mixed reality co-creation platform developed for high-density urban street canyons, integrating SLAM-based spatial scanning, semantic segmentation, and multimodal sensing to quantify and improve restorative street experience. At the algorithmic level, the project proposes a three-ring computation model that translates abstract spatial perception into four measurable parameter dimensions: natural landscape, spatial structure, aesthetic qualities, and social affordances. By collecting in-situ samples and constructing a multilayer linear regression model, the system establishes weighted relationships between objective environmental variables and subjective experiential responses. At the application layer, the platform combines physiological sensing with AI vision for cross-validation, and leverages GenAI 3D generation together with spatial anchoring to let users render and test interventions directly within real streets. Supported by a lightweight virtual guide mechanism, the system connects data collection, quantitative evaluation, and AI-assisted generation into a coherent design workflow, offering a rigorous data model for bottom-up urban micro-renewal and restorative space planning.</span>
+                                <span data-lang="cn">本项目是一个针对高密度城市街谷研发的在地混合现实（MR）共创平台，深度融合 SLAM 空间扫描、语义分割及多模态传感技术，旨在精准量化并提升街道的城市恢复性体验。在底层算法上，项目首创三环计算法，将抽象的空间感知降维拆解为自然景观、空间结构、美学特征与社会可供性四大参数维度。通过采集实地样本并构建多层线性回归模型，系统能够科学计算客观环境因子与主观体验之间的权重关系。在应用层，平台结合生理传感器与 AI 视觉交叉验证，并调用 GenAI 3D 生成与空间锚点技术，允许用户在真实的物理街道中进行实时三维模型渲染与干预测试。辅以轻量级的虚拟向导探索机制，该系统不仅打通了从数据采集、量化评估到 AI 辅助生成的设计流程，也为自下而上的城市微更新与疗愈空间规划提供了更严谨的数据模型支撑。</span>
                             </p>
                         </div>
                     </div>
@@ -2181,9 +2181,17 @@
                 content: () => buildGalleryProjectContent(
                     xrHrGalleryImages,
                     { en: 'Human Resource Management System Based on XR', cn: '基于 XR 的人力资源管理系统' },
-                    'Reserved for your concise summary of the XR-driven HR workflow, product logic, and how the system improves recruitment and management experience.',
-                    '这里预留给你的项目概述，你之后可以直接补充 XR 介入的人力资源流程、产品逻辑，以及系统如何改善招聘与管理体验。',
-                    { galleryClass: 'gallery-wide' }
+                    '',
+                    '',
+                    {
+                        overviewHtml: `
+                            <p class="case-p project-overview-copy">
+                                <span data-lang="en">As the number of job seekers and recruiters continues to grow, existing HR SaaS products are no longer able to fully address the complexity of recruitment and talent management. In this project, I combined the existing product system with virtual reality technology and redesigned the workflow around XR interactions, aiming to solve user pain points in a more reasonable and effective way while elevating the overall experience of using the platform.</span>
+                                <span data-lang="cn">随着求职者与招聘方数量不断增长，现有 HR SaaS 产品已难以完整应对招聘与人才管理中的复杂问题。本项目将既有产品体系与虚拟现实技术结合，并围绕 XR 交互重新设计了一套使用流程，希望以更合理、更高效的方式解决用户在使用过程中的核心痛点，同时提升平台整体的交互体验。</span>
+                            </p>
+                        `,
+                        galleryClass: 'gallery-wide'
+                    }
                 )
             },
             energy: {
@@ -2210,9 +2218,17 @@
                 content: () => buildGalleryProjectContent(
                     energyBraceletGalleryImages,
                     { en: 'Energy Bracelet blending metaphysics with healthy habits', cn: '融合玄学与健康习惯的能量手环' },
-                    'Reserved for your concise summary of the wearable concept, its ritual logic, the role of metaphysics, and how it guides healthier daily habits.',
-                    '这里预留给你的项目概述，你之后可以直接补充这个手环概念的仪式逻辑、玄学元素如何被转译，以及它如何引导更健康的日常习惯。',
-                    { galleryClass: 'gallery-wide' }
+                    '',
+                    '',
+                    {
+                        overviewHtml: `
+                            <p class="case-p project-overview-copy">
+                                <span data-lang="en">The Great Depression from 1929 to 1933 profoundly shook the global economy and weakened people’s confidence in life. In recent years, the combined effects of the pandemic and broader economic uncertainty have led many to feel that a similar emotional climate is returning. In this project, I explored how internet metaphysics could be combined with a healthy life plan, using the visualized concept of an “energy value” to help people rebuild confidence, regain motivation, and become a better version of themselves.</span>
+                                <span data-lang="cn">1929 到 1933 年美国经济大萧条曾对全球经济造成巨大冲击，也让人们对生活失去信心、消费意愿显著下滑。近年来，受疫情与整体经济环境波动影响，许多人认为一种类似的情绪氛围正在回归。本项目尝试将当下流行的互联网玄学与健康生活计划结合起来，并借由“能量值”的可视化概念，帮助人们重新建立对生活的信心，找回行动动力，成为更好的自己。</span>
+                            </p>
+                        `,
+                        galleryClass: 'gallery-wide'
+                    }
                 )
             },
             parasite: {
@@ -2239,9 +2255,17 @@
                 content: () => buildGalleryProjectContent(
                     parasiteDeviceGalleryImages,
                     { en: 'Parasite-inspired micro-device to combat mindless scrolling', cn: '以寄生体为灵感的反刷屏微型装置' },
-                    'Reserved for your concise summary of the speculative concept, the parasite metaphor, the intervention mechanism, and the intended behavior change.',
-                    '这里预留给你的项目概述，你之后可以直接补充这个思辨概念的寄生隐喻、干预机制，以及它试图引发的行为改变。',
-                    { galleryClass: 'gallery-wide' }
+                    '',
+                    '',
+                    {
+                        overviewHtml: `
+                            <p class="case-p project-overview-copy">
+                                <span data-lang="en">A seed falls, takes root, and gradually seizes the host’s consciousness and agency, much like the way electronic devices shape and manipulate our behavior today. This project is an art installation inspired by parasitic fungi in nature that infect animals and alter their actions. By applying the logic of parasitism to the contemporary phenomenon of unconsciously reaching for smartphones, the work invites people to re-examine the behavioral control and dependency created by digital devices.</span>
+                                <span data-lang="cn">一颗种子坠落、生根，并逐渐夺取宿主的意识与行动权，这一过程正如今天电子设备对人的操控方式。本项目是一件受自然界寄生真菌感染动物现象启发的艺术装置，针对“无意识玩手机”的社会现象，将“寄生”这一概念转译到当代人类社会之中，让人们重新审视电子设备对行为与意识的影响。</span>
+                            </p>
+                        `,
+                        galleryClass: 'gallery-wide'
+                    }
                 )
             },
             food: {
@@ -2268,9 +2292,17 @@
                 content: () => buildGalleryProjectContent(
                     foodInstallationGalleryImages,
                     { en: 'Art installation exploring food safety issues', cn: '关于食品安全议题的艺术装置' },
-                    'Reserved for your concise summary of the installation concept, its critical narrative, and how the experience surfaces public awareness around food safety.',
-                    '这里预留给你的项目概述，你之后可以直接补充装置概念、批判性叙事，以及这个体验如何提升公众对食品安全问题的感知。',
-                    { galleryClass: 'gallery-wide' }
+                    '',
+                    '',
+                    {
+                        overviewHtml: `
+                            <p class="case-p project-overview-copy">
+                                <span data-lang="en">Food safety has long been a major public concern in China, yet the problem has still not been resolved effectively. Inspired by my own experience of purchasing counterfeit food, this project combines the uncanny valley effect with an interactive speculative device. It aims to make people re-examine the act of eating itself, while heightening their awareness of counterfeit food through the horror and absurdity triggered by the uncanny experience.</span>
+                                <span data-lang="cn">食品安全一直是中国社会高度关注的问题，但至今仍未得到真正有效的解决。本项目受到我个人购买到假冒食品的经历启发，结合“恐怖谷效应”设计了一件互动式思辨装置，希望借由这种介于恐惧与荒诞之间的感知体验，让人们重新审视“进食”这一过程，并进一步提升对假冒食品的警惕性。</span>
+                            </p>
+                        `,
+                        galleryClass: 'gallery-wide'
+                    }
                 )
             },
             submail: {
