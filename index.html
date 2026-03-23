@@ -743,10 +743,20 @@
         }
         .project-hero-main { min-width: 0; }
         .project-hero-aside { min-width: 0; }
-        .project-hero-title { font-size: clamp(4rem, 7vw, 7.4rem); line-height: 0.92; letter-spacing: -0.05em; color: #fff; max-width: 10ch; }
-        .project-hero-title span { display: block; }
+        .project-hero-title {
+            font-size: clamp(3.9rem, 6.6vw, 6.9rem);
+            line-height: 0.92;
+            letter-spacing: -0.05em;
+            color: #fff;
+            max-width: 11.5ch;
+            overflow: hidden;
+        }
+        .project-hero-title span {
+            display: block;
+            text-wrap: balance;
+        }
         .project-hero-title .project-hero-title-secondary {
-            font-size: clamp(1.35rem, 2.2vw, 2.35rem);
+            font-size: 0.34em;
             line-height: 1.08;
             letter-spacing: -0.03em;
             color: rgba(255,255,255,0.88);
@@ -754,20 +764,27 @@
             font-weight: 400;
         }
         .project-meta {
-            display: flex;
-            gap: 22px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(150px, auto);
+            column-gap: 22px;
+            row-gap: 18px;
             margin-top: 38px;
             max-width: 920px;
+            align-items: start;
         }
         .project-meta-item {
-            min-width: 180px;
-            flex: 1 1 220px;
+            min-width: 0;
             padding-top: 14px;
             border-top: 1px solid rgba(255,255,255,0.12);
         }
+        .project-meta-item--output {
+            grid-column: 1;
+        }
+        .project-meta-item--pages {
+            grid-column: 2;
+        }
         .project-meta-item--tags {
-            flex-basis: 100%;
+            grid-column: 1 / -1;
             max-width: 840px;
         }
         .project-meta-label {
@@ -1155,8 +1172,18 @@
             .p-hero { min-height: auto; padding: 110px 5vw 40px; }
             .p-content { padding: 60px 5vw 80px; }
             .project-hero-title { font-size: clamp(3rem, 14vw, 5rem); max-width: 100%; }
-            .project-meta { gap: 18px; margin-top: 32px; }
-            .project-meta-item { min-width: 0; flex-basis: 100%; }
+            .project-meta {
+                grid-template-columns: 1fr;
+                row-gap: 18px;
+                margin-top: 32px;
+            }
+            .project-meta-item,
+            .project-meta-item--output,
+            .project-meta-item--pages,
+            .project-meta-item--tags {
+                grid-column: 1;
+                max-width: none;
+            }
             .project-hero-shell.project-hero-shell-split { grid-template-columns: 1fr; }
             .project-video-slot { padding: 16px; }
             .project-video-play::before { width: 64px; height: 64px; }
@@ -2491,7 +2518,7 @@
 
         function renderProjectMeta(metaItems) {
             return metaItems.map((item) => `
-                <div class="project-meta-item${item.tags ? ' project-meta-item--tags' : ''}">
+                <div class="project-meta-item project-meta-item--${item.key || 'default'}${item.tags ? ' project-meta-item--tags' : ''}">
                     <div class="tech-font project-meta-label">
                         <span data-lang="en">${item.label.en}</span>
                         <span data-lang="cn">${item.label.cn}</span>
@@ -2515,26 +2542,61 @@
 
             if (cardMeta?.output) {
                 heroMeta.push({
+                    key: 'output',
                     label: { en: 'OUTPUT', cn: '项目产出' },
                     value: cardMeta.output
                 });
             }
 
-            if (cardMeta?.tags?.length) {
-                heroMeta.push({
-                    label: { en: 'TAGS', cn: '项目标签' },
-                    tags: cardMeta.tags
-                });
-            }
-
             if (pageMeta?.value) {
                 heroMeta.push({
+                    key: 'pages',
                     label: { en: 'PAGES', cn: '页数' },
                     value: pageMeta.value
                 });
             }
 
+            if (cardMeta?.tags?.length) {
+                heroMeta.push({
+                    key: 'tags',
+                    label: { en: 'TAGS', cn: '项目标签' },
+                    tags: cardMeta.tags
+                });
+            }
+
             return heroMeta.length ? heroMeta : (project.meta || []);
+        }
+
+        function countProjectTitleLines(title) {
+            const spans = Array.from(title.querySelectorAll('span'));
+            if (!spans.length) return 0;
+
+            return spans.reduce((total, span) => {
+                const rect = span.getBoundingClientRect();
+                const lineHeight = parseFloat(getComputedStyle(span).lineHeight) || rect.height || 1;
+                return total + Math.max(1, Math.round(rect.height / lineHeight));
+            }, 0);
+        }
+
+        function fitProjectHeroTitle() {
+            const title = projectHero.querySelector('.project-hero-title');
+            if (!title) return;
+
+            title.style.fontSize = '';
+            let currentFontSize = parseFloat(getComputedStyle(title).fontSize);
+            let lineCount = countProjectTitleLines(title);
+            let guard = 0;
+
+            while (lineCount > 4 && currentFontSize > 34 && guard < 18) {
+                currentFontSize *= 0.94;
+                title.style.fontSize = `${currentFontSize}px`;
+                lineCount = countProjectTitleLines(title);
+                guard += 1;
+            }
+        }
+
+        function queueProjectHeroTitleFit() {
+            requestAnimationFrame(() => requestAnimationFrame(fitProjectHeroTitle));
         }
 
         function renderProject(id) {
@@ -2576,6 +2638,7 @@
                     </div>
                 </div>
             `;
+            if (projectView.style.display !== 'none') queueProjectHeroTitleFit();
             projectContent.innerHTML = typeof project.content === 'function' ? project.content() : project.content;
             enhanceProjectOverviews();
         }
@@ -2712,6 +2775,7 @@
         window.addEventListener('resize', () => {
             syncEduBackgroundBands();
             queueProjectOverviewSync();
+            queueProjectHeroTitleFit();
         });
 
         // Scroll Logic
@@ -2731,6 +2795,7 @@
             projectView.scrollTop = 0;
             progressBar.style.width = '0%';
             projectView.style.display = 'block';
+            queueProjectHeroTitleFit();
             queueProjectOverviewSync();
             updateProjectTopButton();
             const tl = gsap.timeline({ onComplete: updateProjectImageReveal });
