@@ -59,6 +59,20 @@
         body.lang-cn h1.name-display { letter-spacing: -0.02em; }
         .role-desc { font-size: 1.12rem; color: #999; line-height: 1.72; max-width: 540px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; }
         body.lang-en .role-desc { font-size: 1rem; max-width: 640px; }
+        .role-highlight {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 7px 12px;
+            border: 1px solid rgba(255, 84, 84, 0.34);
+            background: rgba(255, 84, 84, 0.08);
+            color: #fff;
+            border-radius: 999px;
+            font-family: var(--font-tech);
+            font-size: 0.8em;
+            letter-spacing: 0.04em;
+            line-height: 1.35;
+            box-shadow: 0 0 24px rgba(255, 84, 84, 0.1);
+        }
         .hero-visual { display: flex; justify-content: flex-end; position: relative; }
         .glass-card { width: 300px; padding: 18px; background: rgba(20, 20, 20, 0.4); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(20px); border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transform: rotate(-2deg); transition: transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease; position: relative; isolation: isolate; }
         .glass-card::before {
@@ -1736,8 +1750,8 @@
             <div class="hero-text">
                 <h1 class="name-display"><span data-lang="en">YANG YI</span><span data-lang="cn">杨弈</span></h1>
                 <div class="role-desc">
-                    <span data-lang="en">Graduate of The Hong Kong Polytechnic University.<br>Interaction Designer & Product Manager.<br>Focused on interaction experience design, product strategy, and AI-driven end-to-end product development.</span>
-                    <span data-lang="cn">毕业于香港理工大学<br>交互设计师 & 产品经理。<br>专注于交互体验设计/产品战略思维/AI 驱动的全链路产品研发。</span>
+                    <span data-lang="en">Graduate of The Hong Kong Polytechnic University.<br>Interaction Designer & Product Manager.<br>Focused on interaction experience design, product strategy, and AI-driven end-to-end product development.<br><span class="role-highlight">[Expected Graduation: November 2026]</span></span>
+                    <span data-lang="cn">毕业于香港理工大学<br>交互设计师 & 产品经理。<br>专注于交互体验设计/产品战略思维/AI 驱动的全链路产品研发。<br><span class="role-highlight">【预计毕业时间:2026年11月】</span></span>
                 </div>
             </div>
             <div class="hero-visual">
