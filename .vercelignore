@@ -1,0 +1,15 @@
+# Do not upload local dependencies or build outputs for direct Vercel deploys.
+node_modules
+dist
+dist-ssr
+
+# Local tooling and OS noise
+.git
+.DS_Store
+.vscode
+.idea
+*.log
+
+# Large local backup archives
+public.zip
+public 2.zip
