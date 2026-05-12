@@ -338,11 +338,123 @@
         .work-item:hover .w-meta-block {
             border-top-color: rgba(255,255,255,0.15);
         }
+        .github-section {
+            margin-top: 64px;
+            padding-top: 44px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .github-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 34px;
+            margin-bottom: 24px;
+        }
+        .github-title {
+            font-size: 2.5rem;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            font-weight: 500;
+            color: #fff;
+        }
+        .github-profile-link {
+            font-family: var(--font-tech);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            color: #8ab4ff;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .github-profile-link:hover {
+            color: #fff;
+        }
+        .github-repo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+        .github-repo-card {
+            display: block;
+            min-height: 132px;
+            padding: 18px 20px 16px;
+            border: 1px solid rgba(139,148,158,0.42);
+            border-radius: 8px;
+            background: rgba(3, 10, 18, 0.36);
+            color: #fff;
+            text-decoration: none;
+            transition: border-color 0.28s ease, background 0.28s ease, transform 0.28s ease;
+        }
+        .github-repo-card:hover {
+            border-color: rgba(88,166,255,0.72);
+            background: rgba(12, 18, 28, 0.66);
+            transform: translateY(-3px);
+        }
+        .github-repo-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 18px;
+        }
+        .github-repo-name {
+            font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+            color: #58a6ff;
+        }
+        .github-repo-visibility {
+            flex: 0 0 auto;
+            padding: 4px 11px 5px;
+            border: 1px solid rgba(139,148,158,0.55);
+            border-radius: 999px;
+            font-size: 12px;
+            line-height: 1;
+            color: #a9b1bc;
+        }
+        .github-repo-visibility.is-private {
+            border-color: rgba(248,81,73,0.52);
+            color: #ffb4ad;
+            background: rgba(248,81,73,0.08);
+        }
+        .github-repo-desc {
+            margin-top: 12px;
+            max-width: 520px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #9aa4b2;
+        }
+        .github-repo-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 22px;
+            color: #9aa4b2;
+            font-size: 13px;
+        }
+        .github-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .github-language-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #f1e05a;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.12);
+        }
         @media (max-width: 900px) {
             .works-header { flex-direction: column; align-items: flex-start; }
             .work-part-switch { width: 100%; flex-direction: column; }
             .work-part-btn { width: 100%; min-width: 0; }
             .work-grid { grid-template-columns: 1fr; }
+            .github-section { margin-top: 48px; padding-top: 32px; }
+            .github-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .github-repo-card { min-height: 0; padding: 18px; }
+            .github-repo-meta { margin-top: 26px; gap: 18px; }
+            .github-repo-grid { grid-template-columns: 1fr; }
             .work-img-container[data-card-num]::before {
                 top: 12px;
                 left: 12px;
@@ -1981,6 +2093,74 @@
                     <div class="work-info-row"><div class="w-header"><span class="w-num">09</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
                 </div>
             </div>
+
+            <section class="github-section" aria-labelledby="github-section-title">
+                <div class="github-header">
+                    <h2 class="github-title" id="github-section-title">
+                        <span data-lang="en">Personal AI Products / GitHub</span>
+                        <span data-lang="cn">个人AI产品 / GitHub</span>
+                    </h2>
+                    <a class="github-profile-link" href="https://github.com/francoyeoh7" target="_blank" rel="noopener">
+                        <span data-lang="en">View GitHub Profile</span>
+                        <span data-lang="cn">查看 GitHub 主页</span>
+                    </a>
+                </div>
+
+                <div class="github-repo-grid">
+                    <a class="github-repo-card" href="https://github.com/francoyeoh7/meeting-intelligence-canvas" target="_blank" rel="noopener">
+                        <div class="github-repo-top">
+                            <h3 class="github-repo-name">meeting-intelligence-canvas</h3>
+                            <span class="github-repo-visibility">Public</span>
+                        </div>
+                        <p class="github-repo-desc">
+                            <span data-lang="en">A Tencent Meeting-ready voice canvas that turns realtime transcripts into live logic diagrams and role-aware narration.</span>
+                            <span data-lang="cn">面向腾讯会议的语音优先画布，将实时转写转化为逻辑图、上下文指令与角色化旁白。</span>
+                        </p>
+                        <div class="github-repo-meta" aria-label="Repository metadata">
+                            <span class="github-meta-item"><span class="github-language-dot"></span>TypeScript / Python</span>
+                        </div>
+                    </a>
+                    <a class="github-repo-card" href="https://github.com/francoyeoh7/agentflow-console" target="_blank" rel="noopener">
+                        <div class="github-repo-top">
+                            <h3 class="github-repo-name">agentflow-console</h3>
+                            <span class="github-repo-visibility">Public</span>
+                        </div>
+                        <p class="github-repo-desc">
+                            <span data-lang="en">A local control plane for AI agent sessions, approvals, timelines, and transcript imports.</span>
+                            <span data-lang="cn">用于管理 AI 会话、审批、时间线与历史导入的本地控制台。</span>
+                        </p>
+                        <div class="github-repo-meta" aria-label="Repository metadata">
+                            <span class="github-meta-item"><span class="github-language-dot"></span>TypeScript</span>
+                        </div>
+                    </a>
+                    <a class="github-repo-card" href="https://github.com/francoyeoh7/figma-pixel-bridge" target="_blank" rel="noopener">
+                        <div class="github-repo-top">
+                            <h3 class="github-repo-name">figma-pixel-bridge</h3>
+                            <span class="github-repo-visibility">Public</span>
+                        </div>
+                        <p class="github-repo-desc">
+                            <span data-lang="en">A design-to-code bridge for checking Figma screens and frontend pixels with a lightweight local workflow.</span>
+                            <span data-lang="cn">用于连接 Figma 画面与前端像素检查的轻量本地工作流工具。</span>
+                        </p>
+                        <div class="github-repo-meta" aria-label="Repository metadata">
+                            <span class="github-meta-item"><span class="github-language-dot"></span>JavaScript</span>
+                        </div>
+                    </a>
+                    <a class="github-repo-card" href="#project-uxagent">
+                        <div class="github-repo-top">
+                            <h3 class="github-repo-name">experience-aiagent</h3>
+                            <span class="github-repo-visibility is-private"><span data-lang="en">Private</span><span data-lang="cn">非公开</span></span>
+                        </div>
+                        <p class="github-repo-desc">
+                            <span data-lang="en">AI Experience QA case study for testing user experience and interaction logic.</span>
+                            <span data-lang="cn">用于测试用户体验与交互逻辑的 AI Experience QA 案例项目。</span>
+                        </p>
+                        <div class="github-repo-meta" aria-label="Repository metadata">
+                            <span class="github-meta-item"><span class="github-language-dot"></span>TypeScript</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
         </section>
 
         <section id="writing" class="writing-section">
