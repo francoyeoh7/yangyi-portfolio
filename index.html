@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,11 @@
             --font-main: 'Inter', sans-serif;
             --font-tech: 'JetBrains Mono', monospace;
             --font-serif: 'Playfair Display', serif;
+            --font-cn-main: 'HarmonyOS Sans SC', 'MiSans', 'Alibaba PuHuiTi', 'OPPO Sans', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
+            --font-cn-tech: 'HarmonyOS Sans SC', 'MiSans', 'Alibaba PuHuiTi', 'OPPO Sans', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
+            --font-cn-display: 'HarmonyOS Sans SC', 'MiSans', 'Alibaba PuHuiTi', 'OPPO Sans', 'Noto Sans CJK SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
+            --section-title-size: 2.5rem;
+            --section-title-size-mobile: 2.1rem;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,6 +33,87 @@
             font-family: var(--font-main);
             overflow-x: hidden;
             cursor: none;
+        }
+
+        body.lang-cn {
+            font-family: var(--font-cn-main);
+            font-feature-settings: "kern" 1;
+            text-rendering: geometricPrecision;
+        }
+
+        body.lang-cn .tech-font,
+        body.lang-cn .nav-links a,
+        body.lang-cn .status-pill,
+        body.lang-cn .role-highlight,
+        body.lang-cn .id-meta,
+        body.lang-cn .lang-opt,
+        body.lang-cn .year-label,
+        body.lang-cn .tech-stack span,
+        body.lang-cn .footer-contact-label,
+        body.lang-cn .w-num,
+        body.lang-cn .work-part-btn,
+        body.lang-cn .work-part-count,
+        body.lang-cn .research-index,
+        body.lang-cn .research-meta,
+        body.lang-cn .art-index,
+        body.lang-cn .art-date,
+        body.lang-cn .reader-meta,
+        body.lang-cn .p-close,
+        body.lang-cn .sticky-label,
+        body.lang-cn .case-caption,
+        body.lang-cn .project-meta-label,
+        body.lang-cn .project-meta-tag,
+        body.lang-cn .project-overview-toggle,
+        body.lang-cn .divergent-nav-label,
+        body.lang-cn .divergent-nav-button,
+        body.lang-cn .switcher-item,
+        body.lang-cn .c-project-meta,
+        body.lang-cn .github-profile-link,
+        body.lang-cn .github-repo-meta {
+            font-family: var(--font-cn-tech);
+            letter-spacing: 0.04em;
+        }
+
+        body.lang-cn .section-title,
+        body.lang-cn h1.name-display,
+        body.lang-cn .entry-content h3,
+        body.lang-cn .c-project-title,
+        body.lang-cn .research-paper-title,
+        body.lang-cn .github-title,
+        body.lang-cn .w-title,
+        body.lang-cn .art-title-large,
+        body.lang-cn .reader-title,
+        body.lang-cn .reader-body h3,
+        body.lang-cn .case-h2,
+        body.lang-cn .project-hero-title,
+        body.lang-cn .project-link-title,
+        body.lang-cn .divergent-project-title {
+            font-family: var(--font-cn-display);
+            font-weight: 650;
+            letter-spacing: 0;
+        }
+
+        body.lang-cn .project-hero-title .project-hero-title-secondary {
+            letter-spacing: 0;
+            font-weight: 520;
+        }
+
+        body.lang-cn .role-desc,
+        body.lang-cn .entry-content h4,
+        body.lang-cn .entry-content p,
+        body.lang-cn .c-project-desc,
+        body.lang-cn .research-status,
+        body.lang-cn .w-desc,
+        body.lang-cn .reader-body,
+        body.lang-cn .case-p,
+        body.lang-cn .project-overview-copy,
+        body.lang-cn .project-meta-value,
+        body.lang-cn .github-repo-desc,
+        body.lang-cn .divergent-project-focus,
+        body.lang-cn .footer-contact-value,
+        body.lang-cn .footer-contact-value a {
+            font-family: var(--font-cn-main);
+            letter-spacing: 0;
         }
 
         /* --- 视觉层 --- */
@@ -56,7 +142,7 @@
         .status-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 10px #4ade80; animation: pulse 2s infinite; }
         h1.name-display { font-size: 10vw; line-height: 0.9; font-weight: 700; letter-spacing: -0.04em; color: #fff; margin-bottom: 30px; background: linear-gradient(135deg, #fff 0%, #aaa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         h1.name-display span { display: block; }
-        body.lang-cn h1.name-display { letter-spacing: -0.02em; }
+        body.lang-cn h1.name-display { letter-spacing: 0; }
         .role-desc { font-size: 1.12rem; color: #999; line-height: 1.72; max-width: 540px; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; }
         body.lang-en .role-desc { font-size: 1rem; max-width: 640px; }
         .role-highlight {
@@ -109,7 +195,7 @@
         /* 经历 */
         .resume-section { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding: 100px 0; border-bottom: 1px solid var(--line); }
         .section-header { position: sticky; top: 100px; height: fit-content; z-index: 2; }
-        .section-title { font-size: 2.5rem; letter-spacing: -0.02em; margin-bottom: 20px; }
+        .section-title { font-size: var(--section-title-size); letter-spacing: -0.02em; margin-bottom: 20px; }
         .resume-entry { display: grid; grid-template-columns: 132px 1fr; gap: 30px; padding: 30px 0; border-top: 1px solid var(--line); transition: opacity 0.3s; }
         .resume-entry:hover { opacity: 0.8; }
         .year-label { font-family: var(--font-tech); color: var(--dim); font-size: 11px; padding-top: 5px; white-space: nowrap; }
@@ -351,7 +437,7 @@
             margin-bottom: 26px;
         }
         .research-title {
-            font-size: 2.5rem;
+            font-size: var(--section-title-size);
             line-height: 0.96;
             letter-spacing: -0.03em;
             font-weight: 500;
@@ -461,7 +547,7 @@
             margin-bottom: 24px;
         }
         .github-title {
-            font-size: 2.5rem;
+            font-size: var(--section-title-size);
             line-height: 1;
             letter-spacing: -0.03em;
             font-weight: 500;
@@ -1015,89 +1101,86 @@
         .project-hero-shell { width: 100%; }
         .project-hero-shell.project-hero-shell-split {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(380px, 0.98fr);
-            gap: clamp(28px, 4vw, 72px);
+            grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.88fr);
+            gap: clamp(24px, 3.6vw, 60px);
             align-items: end;
         }
         .project-hero-main { min-width: 0; }
         .project-hero-aside { min-width: 0; }
         .project-hero-title {
-            font-size: clamp(3.9rem, 6.6vw, 6.9rem);
-            line-height: 0.92;
-            letter-spacing: -0.05em;
+            font-size: clamp(2.72rem, 4.544vw, 4.704rem);
+            line-height: 0.94;
+            letter-spacing: -0.045em;
             color: #fff;
-            max-width: 11.5ch;
-            overflow: hidden;
+            max-width: 15.25ch;
+            text-wrap: balance;
         }
         .project-hero-title span {
             display: block;
             text-wrap: balance;
         }
         .project-hero-title .project-hero-title-secondary {
-            font-size: 0.34em;
-            line-height: 1.08;
+            font-size: 0.38em;
+            line-height: 1.12;
             letter-spacing: -0.03em;
             color: rgba(255,255,255,0.88);
-            margin-top: 12px;
+            margin-top: 14px;
             font-weight: 400;
         }
         .project-meta {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(150px, auto);
-            column-gap: 22px;
-            row-gap: 18px;
-            margin-top: 38px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 42px;
             max-width: 920px;
-            align-items: start;
         }
         .project-meta-item {
+            display: grid;
+            grid-template-columns: minmax(92px, 108px) minmax(0, 1fr);
+            column-gap: 22px;
+            row-gap: 10px;
+            align-items: start;
             min-width: 0;
             padding-top: 14px;
             border-top: 1px solid rgba(255,255,255,0.12);
         }
-        .project-meta-item--output {
-            grid-column: 1;
-        }
-        .project-meta-item--pages {
-            grid-column: 2;
-        }
-        .project-meta-item--tags {
-            grid-column: 1 / -1;
-            max-width: 840px;
-        }
         .project-meta-label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 0;
+            padding-top: 3px;
             color: #9ea7ad;
         }
         .project-meta-value {
             margin-top: 0;
             color: rgba(255,255,255,0.92);
-            font-size: 0.96rem;
-            line-height: 1.75;
+            font-size: 1rem;
+            line-height: 1.78;
             font-weight: 300;
-            max-width: 40ch;
+            max-width: 52ch;
         }
         .project-meta-value--pages {
             max-width: none;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
         }
         .project-meta-tag-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 7px 8px;
+            padding-top: 2px;
         }
         .project-meta-tag {
             display: inline-flex;
             align-items: center;
-            padding: 6px 11px;
+            padding: 5px 10px;
             border-radius: 999px;
             border: 1px solid rgba(255,255,255,0.12);
             background: rgba(255,255,255,0.03);
             color: #d8e1e6;
             font-family: var(--font-tech);
-            font-size: 10px;
+            font-size: 9.5px;
             line-height: 1.2;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.045em;
         }
         .sf-gallery { display: flex; flex-direction: column; gap: 40px; }
         .sf-gallery-item { margin: 0; }
@@ -1120,6 +1203,17 @@
         }
         .sf-gallery.gallery-wide .case-img-box {
             border-radius: 6px;
+        }
+        .sf-gallery.gallery-portrait { gap: 46px; }
+        .sf-gallery.gallery-portrait .sf-gallery-item {
+            width: min(920px, calc(100vw - 260px));
+            max-width: none;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+        .sf-gallery.gallery-portrait .case-img-box {
+            border-radius: 6px;
+            box-shadow: 0 18px 42px rgba(0,0,0,0.24);
         }
         .sf-gallery.gallery-cinematic { gap: 64px; }
         .sf-gallery.gallery-cinematic .sf-gallery-item {
@@ -1405,6 +1499,132 @@
             position: relative;
             z-index: 1;
         }
+        .tokenx-section-head {
+            max-width: 72ch;
+            margin-bottom: 42px;
+        }
+        .tokenx-section-head--overview {
+            margin-bottom: 48px;
+        }
+        .tokenx-section-head--overview .case-h2 {
+            margin-bottom: 24px;
+        }
+        .tokenx-section-head:not(.tokenx-section-head--overview) .case-h2 {
+            margin-bottom: 0;
+            font-size: clamp(1.9rem, 3.2vw, 2.15rem);
+            line-height: 1.08;
+        }
+        .project-link-slot--tokenx {
+            margin-bottom: 86px;
+        }
+        .tokenx-section-head--highlights {
+            margin-bottom: 18px;
+        }
+        .tokenx-section-head--plan {
+            margin-top: 96px;
+            margin-bottom: 18px;
+        }
+        .divergent-nav {
+            position: sticky;
+            top: 18px;
+            z-index: 6;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: min(1060px, calc(100vw - 64px));
+            margin: -18px auto 76px;
+            padding: 10px 12px 10px 18px;
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 999px;
+            background:
+                linear-gradient(135deg, rgba(21, 24, 25, 0.86), rgba(9, 10, 10, 0.72)),
+                rgba(8, 8, 8, 0.72);
+            backdrop-filter: blur(22px) saturate(138%);
+            -webkit-backdrop-filter: blur(22px) saturate(138%);
+            box-shadow:
+                0 18px 46px rgba(0,0,0,0.34),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+        }
+        .divergent-nav-label {
+            flex: 0 0 auto;
+            font-family: var(--font-tech);
+            font-size: 10px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.58);
+            white-space: nowrap;
+        }
+        .divergent-nav-list {
+            display: flex;
+            flex: 1 1 auto;
+            min-width: 0;
+            flex-wrap: nowrap;
+            gap: 8px;
+            justify-content: flex-end;
+            overflow-x: auto;
+            padding: 2px;
+            scrollbar-width: none;
+        }
+        .divergent-nav-list::-webkit-scrollbar {
+            display: none;
+        }
+        .divergent-nav-button {
+            flex: 0 0 auto;
+            min-height: 34px;
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.045);
+            color: rgba(255,255,255,0.82);
+            padding: 7px 13px;
+            font-family: var(--font-tech);
+            font-size: 9.5px;
+            letter-spacing: 0.04em;
+            cursor: pointer;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+        }
+        .divergent-nav-button:hover {
+            transform: translateY(-1px);
+            border-color: rgba(255,255,255,0.34);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .divergent-project-section {
+            scroll-margin-top: 92px;
+            padding: 82px 0 18px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+        }
+        .divergent-project-section:first-of-type {
+            padding-top: 0;
+            border-top: 0;
+        }
+        .divergent-project-heading {
+            display: grid;
+            grid-template-columns: minmax(110px, 0.32fr) minmax(0, 1fr);
+            gap: 48px;
+            align-items: start;
+            margin-bottom: 34px;
+        }
+        .divergent-project-index {
+            font-family: var(--font-tech);
+            font-size: 13px;
+            letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.48);
+        }
+        .divergent-project-title {
+            max-width: 760px;
+            color: #fff;
+            font-size: clamp(2rem, 3.7vw, 3.35rem);
+            line-height: 1.05;
+            margin-bottom: 16px;
+            text-wrap: balance;
+        }
+        .divergent-project-focus {
+            max-width: 680px;
+            color: #aab1b4;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
         .p-top {
             position: fixed;
             right: 30px;
@@ -1449,19 +1669,20 @@
         @media (max-width: 900px) {
             .p-hero { min-height: auto; padding: 110px 5vw 40px; }
             .p-content { padding: 60px 5vw 80px; }
-            .project-hero-title { font-size: clamp(3rem, 14vw, 5rem); max-width: 100%; }
+            .project-hero-title { font-size: clamp(2.08rem, 8.32vw, 3.456rem); max-width: 100%; }
             .project-meta {
-                grid-template-columns: 1fr;
-                row-gap: 18px;
-                margin-top: 32px;
+                gap: 12px;
+                margin-top: 34px;
             }
             .project-meta-item,
             .project-meta-item--output,
             .project-meta-item--pages,
             .project-meta-item--tags {
-                grid-column: 1;
                 max-width: none;
+                grid-template-columns: 1fr;
+                row-gap: 8px;
             }
+            .project-meta-label { padding-top: 0; }
             .project-hero-shell.project-hero-shell-split { grid-template-columns: 1fr; }
             .project-video-slot { padding: 16px; }
             .project-video-play::before { width: 64px; height: 64px; }
@@ -1482,6 +1703,51 @@
             }
             .project-link-slot { grid-template-columns: 1fr; gap: 18px; }
             .project-link-pill { width: 100%; justify-content: space-between; }
+            .tokenx-section-head {
+                margin-bottom: 28px;
+            }
+            .project-link-slot--tokenx {
+                margin-bottom: 64px;
+            }
+            .tokenx-section-head--highlights,
+            .tokenx-section-head--plan {
+                margin-bottom: 14px;
+            }
+            .tokenx-section-head--plan {
+                margin-top: 72px;
+            }
+            .divergent-nav {
+                position: relative;
+                top: auto;
+                width: calc(100vw - 28px);
+                margin: -10px auto 46px;
+                padding: 12px;
+                border-radius: 24px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .divergent-nav-label { padding: 0 4px; }
+            .divergent-nav-list {
+                justify-content: flex-start;
+                gap: 7px;
+            }
+            .divergent-nav-button {
+                padding: 7px 10px;
+                font-size: 9px;
+            }
+            .divergent-project-section {
+                scroll-margin-top: 24px;
+                padding-top: 58px;
+            }
+            .divergent-project-heading {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                margin-bottom: 26px;
+            }
+            .divergent-project-title {
+                font-size: clamp(1.85rem, 8vw, 2.6rem);
+            }
             .project-video-slot-meta {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1493,6 +1759,10 @@
             .sf-gallery.gallery-wide { gap: 32px; }
             .sf-gallery.gallery-wide .sf-gallery-item {
                 width: calc(100vw - 16px);
+            }
+            .sf-gallery.gallery-portrait { gap: 28px; }
+            .sf-gallery.gallery-portrait .sf-gallery-item {
+                width: min(720px, calc(100vw - 42px));
             }
             .sf-gallery.gallery-cinematic { gap: 28px; }
             .sf-gallery.gallery-cinematic .sf-gallery-item {
@@ -1594,8 +1864,10 @@
                 position: static;
             }
 
-            .section-title {
-                font-size: 2.1rem;
+            .section-title,
+            .research-title,
+            .github-title {
+                font-size: var(--section-title-size-mobile);
                 margin-bottom: 14px;
             }
 
@@ -1732,20 +2004,21 @@
             }
 
             .project-hero-shell.project-hero-shell-split {
-                gap: 24px;
+                gap: 22px;
             }
 
             .project-hero-title {
                 line-height: 0.98;
+                max-width: 13.5ch;
             }
 
             .project-meta {
-                margin-top: 26px;
+                margin-top: 30px;
             }
 
             .project-meta-value {
-                font-size: 0.9rem;
-                line-height: 1.65;
+                font-size: 0.94rem;
+                line-height: 1.7;
             }
 
             .case-grid-1 {
@@ -1816,12 +2089,14 @@
             .sf-gallery,
             .sf-gallery.gallery-balanced,
             .sf-gallery.gallery-wide,
+            .sf-gallery.gallery-portrait,
             .sf-gallery.gallery-cinematic {
                 gap: 24px;
             }
 
             .sf-gallery.gallery-balanced .sf-gallery-item,
             .sf-gallery.gallery-wide .sf-gallery-item,
+            .sf-gallery.gallery-portrait .sf-gallery-item,
             .sf-gallery.gallery-cinematic .sf-gallery-item {
                 width: 100%;
                 max-width: none;
@@ -1942,9 +2217,500 @@
             font-weight: 300;
         }
 
+        /* --- Desktop Density Pass: make the default view closer to 80% browser zoom. --- */
+        @media (min-width: 901px) {
+            html {
+                font-size: 14px;
+            }
+
+            :root {
+                --section-title-size: 2.25rem;
+            }
+
+            .container {
+                max-width: 1220px;
+                padding: 0 3vw;
+            }
+
+            nav {
+                height: 74px;
+            }
+
+            .nav-links a {
+                font-size: 10px;
+                margin-left: 24px;
+            }
+
+            .hero {
+                min-height: 68vh;
+                padding-bottom: 6vh;
+                grid-template-columns: 1.42fr 0.86fr;
+            }
+
+            .status-pill {
+                padding: 5px 10px;
+                margin-bottom: 30px;
+                font-size: 9px;
+            }
+
+            h1.name-display {
+                font-size: clamp(6.2rem, 7.8vw, 8.35rem);
+                margin-bottom: 24px;
+            }
+
+            .role-desc,
+            body.lang-en .role-desc {
+                max-width: 500px;
+                font-size: 1rem;
+                line-height: 1.66;
+                padding-left: 16px;
+            }
+
+            .glass-card {
+                width: 248px;
+                padding: 14px;
+            }
+
+            .photo-area {
+                margin-bottom: 14px;
+            }
+
+            .id-meta {
+                font-size: 8px;
+                gap: 10px;
+            }
+
+            .id-meta span {
+                font-size: 10px;
+            }
+
+            .resume-section {
+                gap: 34px;
+                padding: 78px 0;
+            }
+
+            .section-header {
+                top: 78px;
+            }
+
+            .resume-entry {
+                grid-template-columns: 112px 1fr;
+                gap: 24px;
+                padding: 24px 0;
+            }
+
+            .year-label {
+                font-size: 10px;
+            }
+
+            .entry-content h3 {
+                font-size: 16px;
+            }
+
+            .entry-content h4 {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .entry-content p,
+            .c-project-desc {
+                font-size: 12px;
+                line-height: 1.58;
+                margin-bottom: 12px;
+            }
+
+            .company-projects {
+                margin-top: 20px;
+                gap: 22px;
+            }
+
+            .c-project-title {
+                font-size: 14px;
+            }
+
+            .works-section {
+                padding: 78px 0;
+            }
+
+            .works-header {
+                gap: 32px;
+                margin-bottom: 32px;
+            }
+
+            .works-intro p,
+            .research-note {
+                font-size: 12px;
+                line-height: 1.58;
+            }
+
+            .project-switcher-container {
+                padding: 3px;
+            }
+
+            .switcher-item {
+                padding: 8px 16px;
+            }
+
+            .switcher-item .label {
+                font-size: 10px;
+            }
+
+            .switcher-item .count {
+                font-size: 9px;
+            }
+
+            .work-part-btn {
+                min-width: 142px;
+                padding: 12px 14px;
+            }
+
+            .work-part-btn-label {
+                margin-top: 7px;
+                font-size: 0.9rem;
+            }
+
+            .work-grid {
+                gap: 28px;
+            }
+
+            .work-item:hover {
+                transform: translateY(-3px);
+            }
+
+            .work-img-container[data-card-num]::before {
+                top: 12px;
+                left: 12px;
+                padding: 8px 10px 7px;
+                font-size: 10px;
+            }
+
+            .work-info-row {
+                padding: 16px 22px 20px;
+            }
+
+            .w-header {
+                top: 16px;
+                right: 22px;
+            }
+
+            .w-title {
+                font-size: 1.46rem;
+                line-height: 1.18;
+                padding-right: 32px;
+            }
+
+            .w-desc {
+                margin-top: 10px;
+                gap: 7px;
+            }
+
+            .w-subtitle,
+            .w-meta-value {
+                font-size: 11px;
+                line-height: 1.5;
+            }
+
+            .w-meta-block {
+                padding-top: 7px;
+            }
+
+            .w-tag {
+                padding: 3px 7px;
+                font-size: 9px;
+            }
+
+            .arrow,
+            .research-arrow {
+                font-size: 1.25rem;
+            }
+
+            .research-section {
+                margin-top: 68px;
+                padding-top: 36px;
+            }
+
+            .research-header {
+                margin-bottom: 20px;
+            }
+
+            .research-card {
+                grid-template-columns: minmax(90px, 0.16fr) 1fr auto;
+                gap: 22px;
+                padding: 22px;
+            }
+
+            .research-paper-title {
+                font-size: clamp(1.05rem, 1.25vw, 1.45rem);
+            }
+
+            .research-meta {
+                min-width: 132px;
+                font-size: 9px;
+            }
+
+            .github-section {
+                margin-top: 48px;
+                padding-top: 34px;
+            }
+
+            .github-header {
+                margin-bottom: 18px;
+            }
+
+            .github-repo-grid {
+                gap: 12px;
+            }
+
+            .github-repo-card {
+                min-height: 106px;
+                padding: 14px 16px;
+                border-radius: 7px;
+            }
+
+            .github-repo-name {
+                font-size: clamp(0.98rem, 1.25vw, 1.2rem);
+            }
+
+            .github-repo-visibility {
+                padding: 3px 9px 4px;
+                font-size: 10px;
+            }
+
+            .github-repo-desc {
+                margin-top: 10px;
+                font-size: 11px;
+                line-height: 1.5;
+            }
+
+            .github-repo-meta {
+                margin-top: 16px;
+                gap: 14px;
+                font-size: 11px;
+            }
+
+            .github-language-dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .footer-shell {
+                padding: 78px 0;
+                margin-top: 78px;
+            }
+
+            .footer-contact-value--email a {
+                font-size: clamp(1.32rem, 2.1vw, 1.7rem);
+            }
+
+            .p-close {
+                top: 22px;
+                right: 22px;
+                padding: 8px 16px;
+                font-size: 10px;
+            }
+
+            .p-hero {
+                min-height: 58vh;
+                padding: 64px 4vw 44px;
+            }
+
+            .p-content {
+                max-width: 1040px;
+                padding: 74px 4vw;
+            }
+
+            .p-hero-content {
+                max-width: 1040px;
+            }
+
+            .project-hero-shell.project-hero-shell-split {
+                grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.82fr);
+                gap: clamp(22px, 3vw, 44px);
+            }
+
+            .project-hero-title {
+                font-size: clamp(2.22rem, 3.7vw, 3.58rem);
+                max-width: 14.5ch;
+            }
+
+            .project-hero-title .project-hero-title-secondary {
+                margin-top: 10px;
+            }
+
+            .project-meta {
+                gap: 10px;
+                margin-top: 32px;
+            }
+
+            .project-meta-item {
+                grid-template-columns: minmax(82px, 96px) minmax(0, 1fr);
+                column-gap: 18px;
+                padding-top: 11px;
+            }
+
+            .project-meta-value {
+                font-size: 0.92rem;
+                line-height: 1.62;
+            }
+
+            .project-meta-tag {
+                padding: 4px 8px;
+                font-size: 8.5px;
+            }
+
+            .case-grid-1 {
+                gap: 44px;
+                margin-bottom: 86px;
+            }
+
+            .case-grid-full {
+                margin-bottom: 86px;
+            }
+
+            .sticky-label {
+                top: 42px;
+                margin-bottom: 16px;
+            }
+
+            .case-h2 {
+                font-size: 2.02rem;
+                margin-bottom: 22px;
+            }
+
+            .case-p {
+                font-size: 0.98rem;
+                line-height: 1.66;
+            }
+
+            .project-overview-copy.is-compact {
+                font-size: 0.9rem;
+                line-height: 1.68;
+            }
+
+            .project-link-slot {
+                gap: 22px;
+                margin-bottom: 32px;
+                padding: 20px 22px;
+            }
+
+            .project-link-title {
+                margin-top: 9px;
+                font-size: 1.05rem;
+            }
+
+            .project-link-copy {
+                margin-top: 8px;
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .project-link-pill {
+                padding: 11px 15px;
+                font-size: 10px;
+            }
+
+            .tokenx-section-head {
+                margin-bottom: 34px;
+            }
+
+            .tokenx-section-head:not(.tokenx-section-head--overview) .case-h2 {
+                font-size: clamp(1.62rem, 2.45vw, 1.92rem);
+            }
+
+            .project-link-slot--tokenx {
+                margin-bottom: 66px;
+            }
+
+            .tokenx-section-head--plan {
+                margin-top: 72px;
+            }
+
+            .divergent-nav {
+                top: 14px;
+                width: min(900px, calc(100vw - 80px));
+                margin: -14px auto 56px;
+                padding: 8px 10px 8px 14px;
+                gap: 12px;
+            }
+
+            .divergent-nav-label {
+                font-size: 9px;
+            }
+
+            .divergent-nav-button {
+                min-height: 30px;
+                padding: 6px 11px;
+                font-size: 8.6px;
+            }
+
+            .divergent-project-section {
+                scroll-margin-top: 78px;
+                padding: 64px 0 14px;
+            }
+
+            .divergent-project-heading {
+                grid-template-columns: minmax(92px, 0.28fr) minmax(0, 1fr);
+                gap: 36px;
+                margin-bottom: 28px;
+            }
+
+            .divergent-project-title {
+                font-size: clamp(1.7rem, 2.85vw, 2.65rem);
+                margin-bottom: 12px;
+            }
+
+            .divergent-project-focus {
+                font-size: 0.92rem;
+                line-height: 1.62;
+            }
+
+            .sf-gallery {
+                gap: 32px;
+            }
+
+            .sf-gallery.gallery-balanced .sf-gallery-item {
+                width: min(1120px, calc(100vw - 220px));
+            }
+
+            .sf-gallery.gallery-wide .sf-gallery-item {
+                width: min(1520px, calc(100vw - 120px));
+            }
+
+            .sf-gallery.gallery-portrait .sf-gallery-item {
+                width: min(760px, calc(100vw - 300px));
+            }
+
+            .sf-gallery.gallery-cinematic .sf-gallery-item {
+                width: min(1640px, calc(100vw - 96px));
+            }
+
+            .p-top {
+                right: 22px;
+                bottom: 82px;
+                width: 46px;
+                height: 46px;
+            }
+
+            .control-dock {
+                right: 22px;
+                bottom: 26px;
+            }
+
+            .lang-opt {
+                padding: 7px 13px;
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
     </style>
 </head>
-<body class="lang-en">
+<body class="lang-cn">
 
     <div class="ambient-canvas"><div class="orb-1"></div><div class="orb-2"></div></div>
     <div class="noise"></div>
@@ -1964,6 +2730,7 @@
             <div class="nav-links">
                 <a href="#work"><span data-lang="en">PROJECTS</span><span data-lang="cn">项目作品</span></a>
                 <a href="#exp"><span data-lang="en">EXPERIENCE</span><span data-lang="cn">工作经历</span></a>
+                <a href="/resume/yangyi-hkpolyu.pdf" download><span data-lang="en">RESUME</span><span data-lang="cn">下载简历</span></a>
                 <a href="#contact"><span data-lang="en">CONTACT ME</span><span data-lang="cn">联系我</span></a>
             </div>
         </nav>
@@ -2035,7 +2802,7 @@
                     <div class="entry-content">
                         <h3><span data-lang="en">The Hong Kong Polytechnic University</span><span data-lang="cn">香港理工大学</span></h3>
                         <h4><span data-lang="en">Master of Design (Smart Service Design)</span><span data-lang="cn">设计学硕士（智能服务设计）</span></h4>
-                        <p><span data-lang="en">Focus: Service/interaction design, user psychology, AI collaborative design, hardware/software design, logic, sustainability design.</span><span data-lang="cn">研究方向聚焦于服务与交互设计、用户心理、AI 协同设计、软硬件协同、设计逻辑与可持续设计。</span></p>
+                        <p><span data-lang="en">Major courses: Intelligent system construction, data-driven product design, design systems thinking, interaction design theory, human-computer network physical systems, system innovation and future service design.</span><span data-lang="cn">主要课程：智能系统构建、数据驱动产品设计、设计系统思维、交互设计理论、人机网络物理系统、系统创新与未来服务设计。</span></p>
                         
                         <div class="company-projects" style="margin-top: 15px;">
                             <div class="c-project">
@@ -2059,7 +2826,7 @@
                                     <span class="c-project-bullet"></span>
                                     <span><span data-lang="en">HONOR</span><span data-lang="cn">荣誉</span></span>
                                 </div>
-                                <p class="c-project-desc"><span data-lang="en">Several other awards</span><span data-lang="cn">另获多项学术与设计相关奖项。</span></p>
+                                <p class="c-project-desc"><span data-lang="en">Project TokenX received the Hong Kong Science and Technology Parks Corporation (HKST Micro Fund 2026).</span><span data-lang="cn">项目【TokenX】获得香港科技园基金（HKST Micro fund 2026）。</span></p>
                             </div>
                         </div>
                     </div>
@@ -2070,7 +2837,7 @@
                     <div class="entry-content">
                         <h3><span data-lang="en">Hubei Institute of Fine Arts</span><span data-lang="cn">湖北美术学院</span></h3>
                         <h4><span data-lang="en">Bachelor of Fine Arts（Art Management）</span><span data-lang="cn">艺术学学士（艺术管理）</span></h4>
-                        <p><span data-lang="en">Focus: Chinese and Foreign Design History...</span><span data-lang="cn">主修中外设计史、艺术管理与相关理论课程。</span></p>
+                        <p><span data-lang="en">Major courses: Chinese and foreign art history, principles of aesthetics, industrial design (elective), product design thinking (elective), art history theory.</span><span data-lang="cn">主要课程：中外美术史、美学原理、工业设计(选修)、产品设计思维(选修)、艺术史论。</span></p>
                         
                         <div class="company-projects" style="margin-top: 15px;">
                             <div class="c-project">
@@ -2108,15 +2875,15 @@
                 <div class="project-switcher-container">
                     <div class="switcher-item active" data-part="all" onclick="switchProjectPart('all')">
                         <span class="label"><span data-lang="en">ALL</span><span data-lang="cn">全部</span></span>
-                        <span class="count" style="color: var(--fg);">(09)</span>
+                        <span class="count" style="color: var(--fg);">(08)</span>
                     </div>
                     <div class="switcher-item" data-part="part1" onclick="switchProjectPart('part1')">
                         <span class="label"><span data-lang="en">PART 1</span><span data-lang="cn">part1</span></span>
-                        <span class="count" style="color: var(--dim);">(04)</span>
+                        <span class="count" style="color: var(--dim);">(05)</span>
                     </div>
                     <div class="switcher-item" data-part="part2" onclick="switchProjectPart('part2')">
                         <span class="label"><span data-lang="en">PART 2</span><span data-lang="cn">part2</span></span>
-                        <span class="count" style="color: var(--dim);">(04)</span>
+                        <span class="count" style="color: var(--dim);">(02)</span>
                     </div>
                     <div class="switcher-item" data-part="part3" onclick="switchProjectPart('part3')">
                         <span class="label"><span data-lang="en">PART 3</span><span data-lang="cn">part3</span></span>
@@ -2130,37 +2897,33 @@
                     <div class="work-img-container"><img src="/projects/tokenx/tokenx封面.png" class="work-img"></div>
                     <div class="work-info-row"><div class="w-header"><span class="w-num">01</span><div class="arrow">↗</div></div><h2 class="w-title">TokenX</h2><div class="w-desc"><span data-lang="en">Location-Based / Gamification</span><span data-lang="cn">基于位置的体验 / 游戏化增长</span></div></div>
                 </div>
+                <div class="work-item" onclick="openProject('uxagent')">
+                    <div class="work-img-container"><img src="/aiagent/封面.png?v=20260409-aiagent-launch-v4" class="work-img"></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">AI Agent for UX &amp;<br>Interaction Testing</span><span data-lang="cn">测试用户体验与<br>交互逻辑的AI Agent</span></h2><div class="w-desc"><span data-lang="en">Synthetic users / UX quality assurance</span><span data-lang="cn">合成用户 / 交互体验质检</span></div></div>
+                </div>
                 <div class="work-item" onclick="openProject('sf')">
                     <div class="work-img-container"><img src="/projects/shunfeng/fengmian.png" class="work-img work-img--sf-cover"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SF Drone Delivery</span><span data-lang="cn">顺丰无人机配送</span></h2><div class="w-desc"><span data-lang="en">Service Design / Logistics</span><span data-lang="cn">服务设计 / 物流体验</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">03</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SF Drone Delivery</span><span data-lang="cn">顺丰无人机配送</span></h2><div class="w-desc"><span data-lang="en">Service Design / Logistics</span><span data-lang="cn">服务设计 / 物流体验</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('firm')">
                     <div class="work-img-container"><img src="/projects/law-firm/lawfirmfengmian.jpg" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">03</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Firm Interactive Experience<br>Workflow Optimization</span><span data-lang="cn">律师事务所交互体验<br>流程优化</span></h2><div class="w-desc"><span data-lang="en">Service Design / Legal Workflow</span><span data-lang="cn">服务设计 / 律所流程优化</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">04</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Firm Interactive Experience<br>Workflow Optimization</span><span data-lang="cn">律师事务所交互体验<br>流程优化</span></h2><div class="w-desc"><span data-lang="en">Service Design / Legal Workflow</span><span data-lang="cn">服务设计 / 律所流程优化</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('city')">
                     <div class="work-img-container"><img src="/projects/citycure/citycurefengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">04</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Urban Restorative Design</span><span data-lang="cn">城市疗愈设计</span></h2><div class="w-desc"><span data-lang="en">Academic Research / Urbanism</span><span data-lang="cn">学术研究 / 城市议题</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">05</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Urban Restorative Design</span><span data-lang="cn">城市疗愈设计</span></h2><div class="w-desc"><span data-lang="en">Academic Research / Urbanism</span><span data-lang="cn">学术研究 / 城市议题</span></div></div>
                 </div>
-                <div class="work-item" onclick="openProject('xrhr')">
-                    <div class="work-img-container"><img src="/projects/archive-part-two/1.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">05</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Human Resource Management<br>System Based on XR</span><span data-lang="cn">基于 XR 的<br>人力资源管理系统</span></h2><div class="w-desc"><span data-lang="en">XR / Service System</span><span data-lang="cn">XR / 服务系统</span></div></div>
-                </div>
-                <div class="work-item" onclick="openProject('energy')">
-                    <div class="work-img-container"><img src="/projects/archive-part-two/7.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">06</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">An Energy Bracelet<br>Blending Metaphysics with Healthy Habits</span><span data-lang="cn">结合玄学与健康习惯的<br>能量手环</span></h2><div class="w-desc"><span data-lang="en">Wearable Concept / Ritual Design</span><span data-lang="cn">可穿戴概念 / 仪式设计</span></div></div>
-                </div>
-                <div class="work-item" onclick="openProject('parasite')">
+                <div class="work-item" onclick="openProject('divergent')">
                     <div class="work-img-container"><img src="/projects/archive-part-two/14.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">07</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">A Parasite-Inspired Micro-Device<br>to Combat Mindless Scrolling</span><span data-lang="cn">以寄生体为灵感的微型装置<br>对抗无意识刷屏</span></h2><div class="w-desc"><span data-lang="en">Speculative Design / Behavior</span><span data-lang="cn">思辨设计 / 行为干预</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">06</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Divergent Interaction<br>Experience Design</span><span data-lang="cn">发散型<br>交互体验设计</span></h2><div class="w-desc"><span data-lang="en">HCI / Interaction Experience</span><span data-lang="cn">人机交互 / 交互体验设计</span></div></div>
                 </div>
-                <div class="work-item" onclick="openProject('food')">
-                    <div class="work-img-container"><img src="/projects/archive-part-two/19.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">08</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">An Art Installation Exploring<br>Food Safety Issues</span><span data-lang="cn">关于食品安全议题的<br>艺术装置</span></h2><div class="w-desc"><span data-lang="en">Art Installation / Food Safety</span><span data-lang="cn">艺术装置 / 食品安全</span></div></div>
+                <div class="work-item" onclick="openProject('writtenTests')">
+                    <div class="work-img-container"><img src="/projects/written-tests/cover.png?v=20260509-written-tests-cover-v2" class="work-img"></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">07</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Selected Written Tests<br>(Alibaba, Tencent)</span><span data-lang="cn">部分笔试作品(阿里、腾讯)</span></h2><div class="w-desc"><span data-lang="en">Sensitive information removed. Non-confidential assignments.</span><span data-lang="cn">已剔除敏感信息，非保密题目。</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('submail')">
                     <div class="work-img-container"><img src="/projects/submail/submailfengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">09</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">08</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
                 </div>
             </div>
 
@@ -2169,43 +2932,39 @@
                     <div class="work-img-container"><img src="/projects/tokenx/tokenx封面.png" class="work-img"></div>
                     <div class="work-info-row"><div class="w-header"><span class="w-num">01</span><div class="arrow">↗</div></div><h2 class="w-title">TokenX</h2><div class="w-desc"><span data-lang="en">Location-Based / Gamification</span><span data-lang="cn">基于位置的体验 / 游戏化增长</span></div></div>
                 </div>
+                <div class="work-item" onclick="openProject('uxagent')">
+                    <div class="work-img-container"><img src="/aiagent/封面.png?v=20260409-aiagent-launch-v4" class="work-img"></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">AI Agent for UX &amp;<br>Interaction Testing</span><span data-lang="cn">测试用户体验与<br>交互逻辑的AI Agent</span></h2><div class="w-desc"><span data-lang="en">Synthetic users / UX quality assurance</span><span data-lang="cn">合成用户 / 交互体验质检</span></div></div>
+                </div>
                 <div class="work-item" onclick="openProject('sf')">
                     <div class="work-img-container"><img src="/projects/shunfeng/fengmian.png" class="work-img work-img--sf-cover"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SF Drone Delivery</span><span data-lang="cn">顺丰无人机配送</span></h2><div class="w-desc"><span data-lang="en">Service Design / Logistics</span><span data-lang="cn">服务设计 / 物流体验</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">03</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SF Drone Delivery</span><span data-lang="cn">顺丰无人机配送</span></h2><div class="w-desc"><span data-lang="en">Service Design / Logistics</span><span data-lang="cn">服务设计 / 物流体验</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('firm')">
                     <div class="work-img-container"><img src="/projects/law-firm/lawfirmfengmian.jpg" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">03</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Firm Interactive Experience<br>Workflow Optimization</span><span data-lang="cn">律师事务所交互体验<br>流程优化</span></h2><div class="w-desc"><span data-lang="en">Service Design / Legal Workflow</span><span data-lang="cn">服务设计 / 律所流程优化</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">04</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Firm Interactive Experience<br>Workflow Optimization</span><span data-lang="cn">律师事务所交互体验<br>流程优化</span></h2><div class="w-desc"><span data-lang="en">Service Design / Legal Workflow</span><span data-lang="cn">服务设计 / 律所流程优化</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('city')">
                     <div class="work-img-container"><img src="/projects/citycure/citycurefengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">04</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Urban Restorative Design</span><span data-lang="cn">城市疗愈设计</span></h2><div class="w-desc"><span data-lang="en">Academic Research / Urbanism</span><span data-lang="cn">学术研究 / 城市议题</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">05</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Urban Restorative Design</span><span data-lang="cn">城市疗愈设计</span></h2><div class="w-desc"><span data-lang="en">Academic Research / Urbanism</span><span data-lang="cn">学术研究 / 城市议题</span></div></div>
                 </div>
             </div>
 
             <div class="work-grid work-grid-panel" data-part="part2">
-                <div class="work-item" onclick="openProject('xrhr')">
-                    <div class="work-img-container"><img src="/projects/archive-part-two/1.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">05</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Human Resource Management<br>System Based on XR</span><span data-lang="cn">基于 XR 的<br>人力资源管理系统</span></h2><div class="w-desc"><span data-lang="en">XR / Service System</span><span data-lang="cn">XR / 服务系统</span></div></div>
-                </div>
-                <div class="work-item" onclick="openProject('energy')">
-                    <div class="work-img-container"><img src="/projects/archive-part-two/7.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">06</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">An Energy Bracelet<br>Blending Metaphysics with Healthy Habits</span><span data-lang="cn">结合玄学与健康习惯的<br>能量手环</span></h2><div class="w-desc"><span data-lang="en">Wearable Concept / Ritual Design</span><span data-lang="cn">可穿戴概念 / 仪式设计</span></div></div>
-                </div>
-                <div class="work-item" onclick="openProject('parasite')">
+                <div class="work-item" onclick="openProject('divergent')">
                     <div class="work-img-container"><img src="/projects/archive-part-two/14.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">07</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">A Parasite-Inspired Micro-Device<br>to Combat Mindless Scrolling</span><span data-lang="cn">以寄生体为灵感的微型装置<br>对抗无意识刷屏</span></h2><div class="w-desc"><span data-lang="en">Speculative Design / Behavior</span><span data-lang="cn">思辨设计 / 行为干预</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">06</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Divergent Interaction<br>Experience Design</span><span data-lang="cn">发散型<br>交互体验设计</span></h2><div class="w-desc"><span data-lang="en">HCI / Interaction Experience</span><span data-lang="cn">人机交互 / 交互体验设计</span></div></div>
                 </div>
-                <div class="work-item" onclick="openProject('food')">
-                    <div class="work-img-container"><img src="/projects/archive-part-two/19.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">08</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">An Art Installation Exploring<br>Food Safety Issues</span><span data-lang="cn">关于食品安全议题的<br>艺术装置</span></h2><div class="w-desc"><span data-lang="en">Art Installation / Food Safety</span><span data-lang="cn">艺术装置 / 食品安全</span></div></div>
+                <div class="work-item" onclick="openProject('writtenTests')">
+                    <div class="work-img-container"><img src="/projects/written-tests/cover.png?v=20260509-written-tests-cover-v2" class="work-img"></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">07</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Selected Written Tests<br>(Alibaba, Tencent)</span><span data-lang="cn">部分笔试作品(阿里、腾讯)</span></h2><div class="w-desc"><span data-lang="en">Sensitive information removed. Non-confidential assignments.</span><span data-lang="cn">已剔除敏感信息，非保密题目。</span></div></div>
                 </div>
             </div>
 
             <div class="work-grid work-grid-panel" data-part="part3">
                 <div class="work-item" onclick="openProject('submail')">
                     <div class="work-img-container"><img src="/projects/submail/submailfengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">09</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">08</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
                 </div>
             </div>
 
@@ -2284,7 +3043,7 @@
                             <span class="github-meta-item"><span class="github-language-dot"></span>JavaScript</span>
                         </div>
                     </a>
-                    <a class="github-repo-card" href="#project-uxagent">
+                    <a class="github-repo-card" href="#project-uxagent" onclick="openPrivateProjectCard('uxagent'); return false;">
                         <div class="github-repo-top">
                             <h3 class="github-repo-name">experience-aiagent</h3>
                             <span class="github-repo-visibility is-private"><span data-lang="en">Private</span><span data-lang="cn">非公开</span></span>
@@ -2466,13 +3225,25 @@
         }
 
         const workCardMeta = {
+            uxagent: {
+                output: {
+                    en: 'Harness engineering, AI agent, web app',
+                    cn: 'harness engineering、aiagent、web端'
+                },
+                tags: [
+                    { en: 'Personal Full-Stack Project', cn: '个人全栈项目' },
+                    { en: 'Data Cleaning', cn: '数据清洗' },
+                    { en: 'Model Framework', cn: '模型框架' },
+                    { en: 'User Experience & Interaction', cn: '用户体验与交互' }
+                ]
+            },
             tokenx: {
                 output: {
                     en: 'App, merchant analytics dashboard, internal admin console, product design',
                     cn: 'APP、数据监控后台系统（商家端）、自用后台管理系统、产品设计'
                 },
                 tags: [
-                    { en: 'End-to-End Product Development', cn: '全栈式产品开发' },
+                    { en: 'Personal Full-Stack Project', cn: '个人全栈项目' },
                     { en: 'Modeling & Algorithm Design', cn: '模型算法' },
                     { en: 'Service Experience Design', cn: '服务体验设计' },
                     { en: 'Gamified Marketing', cn: '游戏化营销' },
@@ -2509,6 +3280,39 @@
                 tags: [
                     { en: 'Law Firm Workflow', cn: '律所工作流程' },
                     { en: 'Interaction Experience Design', cn: '交互体验设计' }
+                ]
+            },
+            buchong: {
+                output: {
+                    en: 'UI Design, Group Project',
+                    cn: 'ui设计、小组项目'
+                },
+                tags: [
+                    { en: 'Visual Design', cn: '视觉设计' },
+                    { en: 'Concept Project', cn: '概念项目' },
+                    { en: 'Interaction Experience Design', cn: '交互体验设计' }
+                ]
+            },
+            divergent: {
+                output: {
+                    en: 'Interaction experience collection, UI, XR, wearable and speculative installations',
+                    cn: '交互体验合集、UI、XR、可穿戴与思辨装置'
+                },
+                tags: [
+                    { en: 'Human-Computer Interaction', cn: '人机交互' },
+                    { en: 'Interaction Experience Design', cn: '交互体验设计' },
+                    { en: 'Visual Design', cn: '视觉设计' }
+                ]
+            },
+            writtenTests: {
+                output: {
+                    en: 'Sensitive information removed. Non-confidential assignments.',
+                    cn: '已剔除敏感信息，非保密题目。'
+                },
+                tags: [
+                    { en: 'Experience Design', cn: '体验设计' },
+                    { en: 'Interaction Design', cn: '交互设计' },
+                    { en: 'AI-Enabled Design', cn: 'AI赋能' }
                 ]
             },
             xrhr: {
@@ -2649,6 +3453,17 @@
         const energyBraceletGalleryImages = archivePartTwoPath([7, 8, 9, 10, 11, 12, 13]);
         const parasiteDeviceGalleryImages = archivePartTwoPath([14, 15, 16, 17, 18]);
         const foodInstallationGalleryImages = archivePartTwoPath([19, 20, 21, 22]);
+        const uxAgentGalleryVersion = '?v=20260409-aiagent-launch-v4';
+        const uxAgentGalleryImages = Array.from(
+            { length: 13 },
+            (_, index) => `/aiagent/${index + 1}.png${uxAgentGalleryVersion}`
+        );
+        const uxAgentCoverImage = `/aiagent/封面.png${uxAgentGalleryVersion}`;
+        const buchongGalleryImages = Array.from(
+            { length: 4 },
+            (_, index) => `/projects/buchong/${index + 1}.png`
+        );
+        const buchongProjectCoverImage = '/projects/buchong/1.png';
         const cityProjectCoverImage = '/projects/citycure/citycurefengmian.png';
         const firmProjectCoverImage = '/projects/law-firm/lawfirmfengmian.jpg';
         const cityProjectImageNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
@@ -2659,6 +3474,12 @@
                 .map((page) => `/projects/urban-restorative-design/${page}.jpg`)
         ];
         const tokenXGalleryImages = Array.from({ length: 12 }, (_, index) => `/projects/tokenx/${index + 1}.png`);
+        const tokenXDesignHighlightsVersion = '?v=20260509-tokenx-pages-v1';
+        const tokenXDesignHighlightOrder = [1, 2, 3, 5, 4, 6, 7, 8, 9];
+        const tokenXDesignHighlightImages = tokenXDesignHighlightOrder.map(
+            (page) => `/projects/tokenx/highlight2-raster/${page}.png${tokenXDesignHighlightsVersion}`
+        );
+        const tokenXTotalNarrativeAssets = tokenXDesignHighlightImages.length + tokenXGalleryImages.length;
         const firmWorkflowGalleryImages = Array.from({ length: 41 }, (_, index) => `/projects/firm-workflow-optimization/${index + 1}.png`);
         const submailProjectCoverImage = '/projects/submail/submailfengmian.png';
         const submailGalleryImages = [
@@ -2673,6 +3494,97 @@
             { length: 28 },
             (_, index) => `/projects/shunfeng/${index + 1}.png`
         );
+        const writtenTestsVersion = '?v=20260509-written-tests-v1';
+        const writtenTestsCoverVersion = '?v=20260509-written-tests-cover-v2';
+        const writtenTestsCoverImage = `/projects/written-tests/cover.png${writtenTestsCoverVersion}`;
+        const wechatPayWrittenTestImages = Array.from(
+            { length: 11 },
+            (_, index) => `/projects/written-tests/wechat/${index + 1}.jpg${writtenTestsVersion}`
+        );
+        const taobaoFlashWrittenTestImages = Array.from(
+            { length: 6 },
+            (_, index) => `/projects/written-tests/taobao/${index + 1}.jpg${writtenTestsVersion}`
+        );
+        const writtenTestsTotalPages = wechatPayWrittenTestImages.length + taobaoFlashWrittenTestImages.length;
+        const divergentProjectCoverImage = `/projects/archive-part-two/14.png${archivePartTwoVersion}`;
+        const divergentSubProjects = [
+            {
+                anchor: 'divergent-xr-hr',
+                navTitle: { en: 'XR HR System', cn: 'XR 人力资源' },
+                title: { en: 'Human Resource Management System Based on XR', cn: '基于 XR 的人力资源管理系统' },
+                focus: { en: 'XR interaction framework, gesture interaction and service-system redesign.', cn: 'XR 交互框架、手势交互与服务系统重构。' },
+                images: xrHrGalleryImages,
+                altPrefix: { en: 'Human Resource Management System Based on XR', cn: '基于 XR 的人力资源管理系统' },
+                galleryClass: 'gallery-wide',
+                overviewHtml: `
+                    <p class="case-p project-overview-copy">
+                        <span data-lang="en">As the number of job seekers and recruiters continues to grow, existing HR SaaS products are no longer able to fully address the complexity of recruitment and talent management. In this project, I combined the existing product system with virtual reality technology and redesigned the workflow around XR interactions, aiming to solve user pain points in a more reasonable and effective way while elevating the overall experience of using the platform.</span>
+                        <span data-lang="cn">随着求职者与招聘方数量不断增长，现有 HR SaaS 产品已难以完整应对招聘与人才管理中的复杂问题。本项目将既有产品体系与虚拟现实技术结合，并围绕 XR 交互重新设计了一套使用流程，希望以更合理、更高效的方式解决用户在使用过程中的核心痛点，同时提升平台整体的交互体验。</span>
+                    </p>
+                `
+            },
+            {
+                anchor: 'divergent-energy-bracelet',
+                navTitle: { en: 'Energy Bracelet', cn: '能量手环' },
+                title: { en: 'An Energy Bracelet Blending Metaphysics with Healthy Habits', cn: '结合玄学与健康习惯的能量手环' },
+                focus: { en: 'Wearable concept, ritual design and habit guidance.', cn: '可穿戴概念、仪式设计与健康习惯引导。' },
+                images: energyBraceletGalleryImages,
+                altPrefix: { en: 'Energy Bracelet blending metaphysics with healthy habits', cn: '结合玄学与健康习惯的能量手环' },
+                galleryClass: 'gallery-wide',
+                overviewHtml: `
+                    <p class="case-p project-overview-copy">
+                        <span data-lang="en">The Great Depression from 1929 to 1933 profoundly shook the global economy and weakened people’s confidence in life. In recent years, the combined effects of the pandemic and broader economic uncertainty have led many to feel that a similar emotional climate is returning. In this project, I explored how internet metaphysics could be combined with a healthy life plan, using the visualized concept of an “energy value” to help people rebuild confidence, regain motivation, and become a better version of themselves.</span>
+                        <span data-lang="cn">1929 到 1933 年美国经济大萧条曾对全球经济造成巨大冲击，也让人们对生活失去信心、消费意愿显著下滑。近年来，受疫情与整体经济环境波动影响，许多人认为一种类似的情绪氛围正在回归。本项目尝试将当下流行的互联网玄学与健康生活计划结合起来，并借由“能量值”的可视化概念，帮助人们重新建立对生活的信心，找回行动动力，成为更好的自己。</span>
+                    </p>
+                `
+            },
+            {
+                anchor: 'divergent-parasite-device',
+                navTitle: { en: 'Anti-Scrolling Device', cn: '反刷屏装置' },
+                title: { en: 'A Parasite-Inspired Micro-Device to Combat Mindless Scrolling', cn: '以寄生体为灵感的微型装置对抗无意识刷屏' },
+                focus: { en: 'Speculative interaction, behavior intervention and counter-system design.', cn: '思辨交互、行为干预与对抗系统设计。' },
+                images: parasiteDeviceGalleryImages,
+                altPrefix: { en: 'Parasite-inspired micro-device to combat mindless scrolling', cn: '以寄生体为灵感的微型装置对抗无意识刷屏' },
+                galleryClass: 'gallery-wide',
+                overviewHtml: `
+                    <p class="case-p project-overview-copy">
+                        <span data-lang="en">A seed falls, takes root, and gradually seizes the host’s consciousness and agency, much like the way electronic devices shape and manipulate our behavior today. This project is an art installation inspired by parasitic fungi in nature that infect animals and alter their actions. By applying the logic of parasitism to the contemporary phenomenon of unconsciously reaching for smartphones, the work invites people to re-examine the behavioral control and dependency created by digital devices.</span>
+                        <span data-lang="cn">一颗种子坠落、生根，并逐渐夺取宿主的意识与行动权，这一过程正如今天电子设备对人的操控方式。本项目是一件受自然界寄生真菌感染动物现象启发的艺术装置，针对“无意识玩手机”的社会现象，将“寄生”这一概念转译到当代人类社会之中，让人们重新审视电子设备对行为与意识的影响。</span>
+                    </p>
+                `
+            },
+            {
+                anchor: 'divergent-food-installation',
+                navTitle: { en: 'Food Installation', cn: '食品装置' },
+                title: { en: 'An Art Installation Exploring Food Safety Issues', cn: '关于食品安全议题的艺术装置' },
+                focus: { en: 'Interactive installation, speculative design and food-safety awareness.', cn: '互动装置、思辨设计与食品安全意识唤起。' },
+                images: foodInstallationGalleryImages,
+                altPrefix: { en: 'Art installation exploring food safety issues', cn: '关于食品安全议题的艺术装置' },
+                galleryClass: 'gallery-wide',
+                overviewHtml: `
+                    <p class="case-p project-overview-copy">
+                        <span data-lang="en">Food safety has long been a major public concern in China, yet the problem has still not been resolved effectively. Inspired by my own experience of purchasing counterfeit food, this project combines the uncanny valley effect with an interactive speculative device. It aims to make people re-examine the act of eating itself, while heightening their awareness of counterfeit food through the horror and absurdity triggered by the uncanny experience.</span>
+                        <span data-lang="cn">食品安全一直是中国社会高度关注的问题，但至今仍未得到真正有效的解决。本项目受到我个人购买到假冒食品的经历启发，结合“恐怖谷效应”设计了一件互动式思辨装置，希望借由这种介于恐惧与荒诞之间的感知体验，让人们重新审视“进食”这一过程，并进一步提升对假冒食品的警惕性。</span>
+                    </p>
+                `
+            },
+            {
+                anchor: 'divergent-ui-supplement',
+                navTitle: { en: 'UI Supplement', cn: 'ui补充' },
+                title: { en: 'UI Supplement', cn: 'ui补充' },
+                focus: { en: 'UI design, visual design and early group concept projects.', cn: 'UI 设计、视觉设计与早期小组概念项目。' },
+                images: buchongGalleryImages,
+                altPrefix: { en: 'UI Supplement', cn: 'ui补充' },
+                galleryClass: 'gallery-balanced',
+                overviewHtml: `
+                    <p class="case-p project-overview-copy">
+                        <span data-lang="en">These two concept projects were earlier group assignments, and I was responsible for the UI/UX interface portion. They include a critical design project that uses religion as a lens to explore the profound impact of digital technology on our lives, as well as a travel and social networking app, presented here as a supplement to the visual work.</span>
+                        <span data-lang="cn">这两个概念项目是早些时间的小组作业，我负责了其中的 ui/ux 界面部分，包含一个对以宗教为例子探讨数字技术对我们生活的深远影响的批判性设计以及一款旅行和社交网络 app，作为视觉部分的补充。</span>
+                    </p>
+                `
+            }
+        ];
+        const divergentTotalPages = divergentSubProjects.reduce((total, project) => total + project.images.length, 0);
 
         function buildGalleryProjectContent(images, altPrefix, overviewEn, overviewCn, options = {}) {
             const galleryClass = options.galleryClass ? ` ${options.galleryClass}` : '';
@@ -2708,6 +3620,185 @@
                     `).join('')}
                 </div>
                 <div style="height: 100px;"></div>
+            `;
+        }
+
+        function buildDivergentSubProjectSection(project, index) {
+            const galleryClass = project.galleryClass ? ` ${project.galleryClass}` : '';
+            const title = renderLangPair(project.title);
+            const focus = renderLangPair(project.focus);
+            const altPrefix = resolveLangValue(project.altPrefix);
+            const sectionNumber = String(index + 1).padStart(2, '0');
+
+            return `
+                <section class="divergent-project-section" id="${project.anchor}">
+                    <div class="divergent-project-heading">
+                        <div class="divergent-project-index">${sectionNumber}</div>
+                        <div>
+                            <h2 class="divergent-project-title">${title}</h2>
+                            <p class="divergent-project-focus">${focus}</p>
+                        </div>
+                    </div>
+                    <div class="case-grid-1">
+                        <div>
+                            <span class="sticky-label">
+                                <span data-lang="en">${sectionNumber} / OVERVIEW</span>
+                                <span data-lang="cn">${sectionNumber} / 概述</span>
+                            </span>
+                        </div>
+                        <div>${project.overviewHtml}</div>
+                    </div>
+                    <div class="sf-gallery${galleryClass}">
+                        ${project.images.map((src, imageIndex) => `
+                            <figure class="sf-gallery-item">
+                                <div class="case-img-box">
+                                    <img src="${src}" class="case-img" alt="${altPrefix}${currentLang === 'cn' ? ` 案例研究第 ${imageIndex + 1} 页` : ` case study page ${imageIndex + 1}`}">
+                                </div>
+                            </figure>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+        }
+
+        function buildDivergentProjectContent() {
+            return `
+                <div class="divergent-nav">
+                    <div class="divergent-nav-label">
+                        <span data-lang="en">Select Subproject</span>
+                        <span data-lang="cn">选择子项目</span>
+                    </div>
+                    <div class="divergent-nav-list">
+                        ${divergentSubProjects.map((project) => `
+                            <button class="divergent-nav-button" type="button" onclick="scrollDivergentProject('${project.anchor}')">
+                                ${renderLangPair(project.navTitle)}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+                ${divergentSubProjects.map((project, index) => buildDivergentSubProjectSection(project, index)).join('')}
+                <div style="height: 100px;"></div>
+            `;
+        }
+
+        function scrollDivergentProject(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        const writtenTestSections = [
+            {
+                anchor: 'written-test-wechat',
+                navTitle: { en: 'WeChat Pay', cn: '微信支付' },
+                title: { en: 'Tencent / WeChat Pay Written Test', cn: '腾讯 / 微信支付体验设计笔试' },
+                focus: {
+                    en: 'A gamified blessing-message play mode designed around red packet scenarios.',
+                    cn: '围绕红包场景，设计一个趣味化的祝福语玩法。'
+                },
+                images: wechatPayWrittenTestImages,
+                altPrefix: { en: 'WeChat Pay written test', cn: '微信支付体验设计笔试' },
+                galleryClass: 'gallery-balanced',
+                overviewHtml: `
+                    <p class="case-p project-overview-copy">
+                        <span data-lang="en">This Tencent / WeChat Pay written test explores how to add a more playful blessing-message experience to red packet scenarios. The design focuses on preserving the emotional ritual of sending a red packet while making the blessing itself more interactive, memorable, and easier to personalize.</span>
+                        <span data-lang="cn">微信支付这个题目是在红包场景做一个趣味化的祝福语玩法</span>
+                    </p>
+                `
+            },
+            {
+                anchor: 'written-test-taobao',
+                navTitle: { en: 'Taobao Flash', cn: '阿里 / 淘宝闪购' },
+                title: { en: 'Alibaba / Taobao Flash AI Experience Design Written Test', cn: '阿里 / 淘宝闪购 AI 体验设计笔试' },
+                focus: {
+                    en: 'Using only AI tools to optimize a backend system without manual design or coding.',
+                    cn: '使用纯粹的AI工具做后台系统优化，不能手动设计或者 coding。'
+                },
+                images: taobaoFlashWrittenTestImages,
+                altPrefix: { en: 'Taobao Flash AI experience design written test', cn: '淘宝闪购 AI 体验设计笔试' },
+                galleryClass: 'gallery-portrait',
+                overviewHtml: `
+                    <p class="case-p project-overview-copy">
+                        <span data-lang="en">The Alibaba / Taobao Flash written test asked me to rely purely on AI tools to optimize a backend system. Manual interface design and coding were not allowed, so the work focused on how to use AI for problem framing, interface diagnosis, information-architecture refinement, interaction logic iteration, and design-output organization.</span>
+                        <span data-lang="cn">阿里-淘宝闪购这个题目要求我用纯粹的AI工具来做一个后台系统的优化，不能手动设计或者 coding。因此这个部分重点展示的是如何用 AI 完成问题拆解、界面诊断、信息架构梳理、交互逻辑迭代与最终方案组织。</span>
+                    </p>
+                `
+            }
+        ];
+
+        function buildWrittenTestSection(section, index) {
+            const galleryClass = section.galleryClass ? ` ${section.galleryClass}` : '';
+            const sectionNumber = String(index + 1).padStart(2, '0');
+            const altPrefix = resolveLangValue(section.altPrefix);
+
+            return `
+                <section class="divergent-project-section written-test-section" id="${section.anchor}">
+                    <div class="divergent-project-heading">
+                        <div class="divergent-project-index">${sectionNumber}</div>
+                        <div>
+                            <h2 class="divergent-project-title">${renderLangPair(section.title)}</h2>
+                            <p class="divergent-project-focus">${renderLangPair(section.focus)}</p>
+                        </div>
+                    </div>
+                    <div class="case-grid-1">
+                        <div>
+                            <span class="sticky-label">
+                                <span data-lang="en">${sectionNumber} / CONTEXT</span>
+                                <span data-lang="cn">${sectionNumber} / 说明</span>
+                            </span>
+                        </div>
+                        <div>${section.overviewHtml}</div>
+                    </div>
+                    <div class="sf-gallery${galleryClass}">
+                        ${section.images.map((src, imageIndex) => `
+                            <figure class="sf-gallery-item">
+                                <div class="case-img-box">
+                                    <img src="${src}" class="case-img" alt="${altPrefix}${currentLang === 'cn' ? ` 第 ${imageIndex + 1} 页` : ` page ${imageIndex + 1}`}">
+                                </div>
+                            </figure>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+        }
+
+        function buildWrittenTestsProjectContent() {
+            return `
+                <div class="divergent-nav written-tests-nav">
+                    <div class="divergent-nav-label">
+                        <span data-lang="en">Select Written Test</span>
+                        <span data-lang="cn">选择笔试作品</span>
+                    </div>
+                    <div class="divergent-nav-list">
+                        ${writtenTestSections.map((section) => `
+                            <button class="divergent-nav-button" type="button" onclick="scrollWrittenTestProject('${section.anchor}')">
+                                ${renderLangPair(section.navTitle)}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+                ${writtenTestSections.map((section, index) => buildWrittenTestSection(section, index)).join('')}
+                <div style="height: 100px;"></div>
+            `;
+        }
+
+        function scrollWrittenTestProject(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function buildTokenXImageGallery(images, altPrefix) {
+            return `
+                <div class="sf-gallery gallery-balanced">
+                    ${images.map((src, index) => `
+                            <figure class="sf-gallery-item">
+                                <div class="case-img-box">
+                                    <img src="${src}" class="case-img" alt="${currentLang === 'cn' ? `${altPrefix}第 ${index + 1} 页` : `${altPrefix} page ${index + 1}`}">
+                                </div>
+                            </figure>
+                        `).join('')}
+                </div>
             `;
         }
 
@@ -2836,6 +3927,42 @@
                     <div style="height: 100px;"></div>
                 `
             },
+            uxagent: {
+                heroImage: uxAgentCoverImage,
+                heroTheme: '',
+                kicker: {
+                    en: 'AI EXPERIENCE QA CASE STUDY',
+                    cn: 'AI 体验质检案例'
+                },
+                title: 'AI Agent for Testing User Experience and Interaction Logic',
+                titleCn: '测试用户体验与交互逻辑的AI Agent',
+                titleHtml: '<span>AI Agent for Testing</span><span>User Experience and</span><span>Interaction Logic</span>',
+                titleHtmlCn: '<span>测试用户体验与</span><span>交互逻辑的</span><span>AI Agent</span>',
+                meta: [
+                    {
+                        label: { en: 'FORMAT', cn: '形式' },
+                        value: { en: `${uxAgentGalleryImages.length}-page visual case study`, cn: `${uxAgentGalleryImages.length} 页视觉案例` }
+                    }
+                ],
+                content: () => buildGalleryProjectContent(
+                    uxAgentGalleryImages,
+                    {
+                        en: 'AI Agent for Testing User Experience and Interaction Logic',
+                        cn: '测试用户体验与交互逻辑的AI Agent'
+                    },
+                    '',
+                    '',
+                    {
+                        overviewHtml: `
+                            <p class="case-p project-overview-copy">
+                                <span data-lang="en">After the user enters a product URL, the system automatically identifies interaction and user-experience issues, while supporting follow-up questions and conversational memory.<br><br>FrictionSenseAI combines multimodal large language models (MLLMs) with an automated testing framework. It independently defines the core Harness and Judge logic, reframing conventional test errors into a structured model for experience-friction analysis. By simulating virtual user personas with specific emotional biases and levels of technical literacy, it runs dynamic multi-round interaction rehearsals before launch and ultimately delivers commercially actionable UX diagnostic reports.</span>
+                                <span data-lang="cn">用户输入产品的 URL 后，系统会自动分析该产品的交互体验问题，并支持追问与对话记忆。<br><br>FrictionSenseAI 结合多模态大模型（MLLM）与自动化测试框架，自主设计 Harness 与 Judge 的核心逻辑，将传统测试中的报错重构为结构化的体验阻碍分析模型。通过构建具备特定情绪偏见与技术素养的虚拟用户画像，它可以在产品上线前进行动态的多轮交互推演，最终输出可落地的商业级体验诊断报告。</span>
+                            </p>
+                        `,
+                        galleryClass: 'gallery-balanced'
+                    }
+                )
+            },
             tokenx: {
                 heroImage: '',
                 heroTheme: 'p-hero-theme--tokenx',
@@ -2854,7 +3981,10 @@
                     },
                     {
                         label: { en: 'FORMAT', cn: '形式' },
-                        value: { en: `${tokenXGalleryImages.length}-page product narrative`, cn: `${tokenXGalleryImages.length} 页产品叙事案例` }
+                        value: {
+                            en: `${tokenXTotalNarrativeAssets} total slides (${tokenXDesignHighlightImages.length} design highlight pages + ${tokenXGalleryImages.length} plan pages)`,
+                            cn: `共 ${tokenXTotalNarrativeAssets} 页（${tokenXDesignHighlightImages.length} 页设计亮点 + ${tokenXGalleryImages.length} 页初步商业计划）`
+                        }
                     }
                 ],
                 heroAsideHtml: `
@@ -2885,51 +4015,69 @@
                         </div>
                     </div>
                 `,
-                content: () => buildGalleryProjectContent(
-                    tokenXGalleryImages,
-                    { en: 'TokenX', cn: 'TokenX' },
-                    '',
-                    '',
-                    {
-                        overviewHtml: `
-                            <div class="project-overview-block">
-                                <p class="case-p project-overview-copy is-compact is-collapsed">
-                                    <span data-lang="en">TokenX is a B2B2C local commerce proposal that reimagines traditional merchant promotions as location-based urban treasure hunt experiences for exploration-driven young consumers. The project is designed to help local merchants drive offline traffic, improve in-store conversion, and build stronger brand memorability through a more engaging and measurable customer acquisition model. By creating a closed loop of campaign launch, user exploration, in-store redemption, and performance tracking, TokenX combines gamification, LBS technology, and data-based evaluation into a scalable growth solution. Beyond a single campaign format, it also proposes a future business model that can evolve into standardized merchant activation packages, insight services, and district-level branded collaborations.</span>
-                                    <span data-lang="cn">TokenX 是一个 B2B2C 本地商业提案，它把传统商家促销重新设计成面向年轻探索型消费者的城市寻宝体验。这个项目希望帮助本地商户更有效地引导线下到店、提升核销转化，并通过更具参与感、也更易衡量的获客方式强化品牌记忆。通过串联活动发起、用户探索、门店兑换与数据追踪，TokenX 将游戏化机制、LBS 技术与数据评估整合为一套可扩展的增长方案。它不只是一次活动形式的设计，也进一步提出了可延展为标准化商家激活套餐、洞察服务与街区品牌联动的未来商业模式。</span>
-                                </p>
-                                <button class="project-overview-toggle" type="button" aria-expanded="false" onclick="toggleProjectOverview(this)">
-                                    <span class="toggle-label--expand" data-lang="en">Read More</span>
-                                    <span class="toggle-label--expand" data-lang="cn">展开阅读全文</span>
-                                    <span class="toggle-label--collapse" data-lang="en">Show Less</span>
-                                    <span class="toggle-label--collapse" data-lang="cn">收起</span>
-                                </button>
+                content: () => `
+                    <div class="tokenx-section-head tokenx-section-head--overview">
+                        <h2 class="case-h2">
+                            <span data-lang="en">Project Overview.</span>
+                            <span data-lang="cn">项目概述。</span>
+                        </h2>
+                        <div class="project-overview-block">
+                            <p class="case-p project-overview-copy is-compact is-collapsed">
+                                <span data-lang="en">TokenX is a B2B2C local commerce proposal that reimagines traditional merchant promotions as location-based urban treasure hunt experiences for exploration-driven young consumers. The project is designed to help local merchants drive offline traffic, improve in-store conversion, and build stronger brand memorability through a more engaging and measurable customer acquisition model. By creating a closed loop of campaign launch, user exploration, in-store redemption, and performance tracking, TokenX combines gamification, LBS technology, and data-based evaluation into a scalable growth solution. Beyond a single campaign format, it also proposes a future business model that can evolve into standardized merchant activation packages, insight services, and district-level branded collaborations.<br><br>- Built an O2O physical interaction loop around a C-side LBS map-based treasure hunt and offline NFC touchpoint experience. Defined cross-media interaction standards from digital interface to physical space, and completed MVP validation of the gamified mental model.<br>- Designed an internal admin system and merchant control console. Mapped the two-sided business flow and used high-density data tables with modular layouts to compress coordinate selection, asset status transfer, and NFC key delivery into a simple standardized workflow.<br>- Drove AI-assisted agile engineering delivery from a full-stack perspective. Controlled front-end visual quality and component standards, translating interaction concepts into production-grade React/Tailwind code while significantly shortening the development cycle.</span>
+                                <span data-lang="cn">TokenX 是一个 B2B2C 本地商业提案，它把传统商家促销重新设计成面向年轻探索型消费者的城市寻宝体验。这个项目希望帮助本地商户更有效地引导线下到店、提升核销转化，并通过更具参与感、也更易衡量的获客方式强化品牌记忆。通过串联活动发起、用户探索、门店兑换与数据追踪，TokenX 将游戏化机制、LBS 技术与数据评估整合为一套可扩展的增长方案。它不只是一次活动形式的设计，也进一步提出了可延展为标准化商家激活套餐、洞察服务与街区品牌联动的未来商业模式。<br><br>-构建O2O物理交互闭环，采用C端LBS 地图寻宝 + 线下 NFC 触碰的核心体验设计。制定从数字界面到物理空间跨媒介的交互规范，完成游戏化心智的 MVP 体验验证。<br>-设计自用后台管理系统以及商户中控系统。梳理双边业务流，采用高屏效数据表与模块化布局，将复杂的坐标拾取、资产状态流转与 NFC 密钥下发整合为极简标准工作流。<br>-驱动AI敏捷工程交付，以全栈视角驾驭AI辅助编程。严格把控前端视觉与组件规范，将交互构想转化为生产级React/Tailwind代码，大幅缩减研发周期。</span>
+                            </p>
+                            <button class="project-overview-toggle" type="button" aria-expanded="false" onclick="toggleProjectOverview(this)">
+                                <span class="toggle-label--expand" data-lang="en">Read More</span>
+                                <span class="toggle-label--expand" data-lang="cn">展开阅读全文</span>
+                                <span class="toggle-label--collapse" data-lang="en">Show Less</span>
+                                <span class="toggle-label--collapse" data-lang="cn">收起</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-link-slot project-link-slot--tokenx">
+                        <div>
+                            <div class="project-link-label">
+                                <span data-lang="en">Demo Access</span>
+                                <span data-lang="cn">Demo 链接</span>
                             </div>
-                        `,
-                        beforeGalleryHtml: `
-                            <div class="project-link-slot project-link-slot--tokenx">
-                                <div>
-                                    <div class="project-link-label">
-                                        <span data-lang="en">Demo Access</span>
-                                        <span data-lang="cn">Demo 链接</span>
-                                    </div>
-                                    <div class="project-link-title">
-                                        <span data-lang="en">This is the demo link for TokenX.</span>
-                                        <span data-lang="cn">这是 TokenX 的 demo 链接。</span>
-                                    </div>
-                                    <div class="project-link-copy">
-                                        <span data-lang="en">Test account:707490095@qq.com, verification code:000000. The product is still being improved.</span>
-                                        <span data-lang="cn">测试账号:707490095@qq.com，验证码:000000。目前产品还在完善中。</span>
-                                    </div>
+                            <div class="project-link-title">
+                                <span data-lang="en">This is the demo link for TokenX.</span>
+                                <span data-lang="cn">这是 TokenX 的 demo 链接。</span>
+                            </div>
+                            <div class="project-link-copy">
+                                <span data-lang="en">Test account:707490095@qq.com, verification code:000000. The product is still being improved.</span>
+                                <span data-lang="cn">测试账号:707490095@qq.com，验证码:000000。目前产品还在完善中。</span>
+                            </div>
+                        </div>
+                        <a class="project-link-pill" href="https://drop-app-demo.vercel.app" target="_blank" rel="noopener noreferrer">
+                            <span data-lang="en">Open Demo (VPN required)</span>
+                            <span data-lang="cn">打开 Demo【需要vpn】</span>
+                        </a>
+                    </div>
+                    <div class="tokenx-section-head tokenx-section-head--highlights">
+                        <h2 class="case-h2">
+                            <span data-lang="en">Selected Design Highlights.</span>
+                            <span data-lang="cn">部分设计亮点。</span>
+                        </h2>
+                    </div>
+                    ${buildTokenXImageGallery(tokenXDesignHighlightImages, currentLang === 'cn' ? 'TokenX 部分设计亮点' : 'TokenX design highlights')}
+                    <div class="tokenx-section-head tokenx-section-head--plan">
+                        <h2 class="case-h2">
+                            <span data-lang="en">Initial Business Plan.</span>
+                            <span data-lang="cn">初步商业计划。</span>
+                        </h2>
+                    </div>
+                    <div class="sf-gallery gallery-balanced">
+                        ${tokenXGalleryImages.map((src, index) => `
+                            <figure class="sf-gallery-item">
+                                <div class="case-img-box">
+                                    <img src="${src}" class="case-img" alt="${currentLang === 'cn' ? `TokenX 初步商业计划第 ${index + 1} 页` : `TokenX initial business plan page ${index + 1}`}">
                                 </div>
-                                <a class="project-link-pill" href="https://drop-app-demo.vercel.app" target="_blank" rel="noopener noreferrer">
-                                    <span data-lang="en">Open Demo</span>
-                                    <span data-lang="cn">打开 Demo</span>
-                                </a>
-                            </div>
-                        `,
-                        galleryClass: 'gallery-balanced'
-                    }
-                )
+                            </figure>
+                        `).join('')}
+                    </div>
+                    <div style="height: 100px;"></div>
+                `
             },
             sf: {
                 heroImage: sfDroneCoverImage,
@@ -3057,6 +4205,81 @@
                             <p class="case-p project-overview-copy">
                                 <span data-lang="en">This project applies service design methods to a newly established law firm. By mapping the end-to-end service process, identifying operational pain points, and validating issues through field research and funnel analysis, we proposed tailored workflow and interaction optimizations for customer service and case consultants. The goal was to streamline internal collaboration, improve the client consultation experience, increase lead conversion, and ultimately support higher deal volume.</span>
                                 <span data-lang="cn">本项目将服务设计方法应用于一家新成立的律师事务所。通过梳理从获客、咨询到案件跟进的完整服务流程，结合实地调研与漏斗分析识别运营痛点，我们分别为客服与案件顾问提出了定制化的交互与流程优化方案。项目目标是让内部协作更顺畅、客户咨询体验更清晰，同时提升线索转化率与最终成单量。</span>
+                            </p>
+                        `,
+                        galleryClass: 'gallery-balanced'
+                    }
+                )
+            },
+            divergent: {
+                heroImage: divergentProjectCoverImage,
+                heroTheme: 'p-hero-theme--parasite',
+                kicker: {
+                    en: 'INTERACTION EXPERIENCE COLLECTION',
+                    cn: '交互体验合集'
+                },
+                title: 'Divergent Interaction Experience Design',
+                titleCn: '发散型交互体验设计',
+                titleHtml: '<span>Divergent</span><span>Interaction Experience</span><span>Design</span>',
+                titleHtmlCn: '<span>发散型</span><span>交互体验设计</span>',
+                meta: [
+                    {
+                        label: { en: 'FORMAT', cn: '形式' },
+                        value: { en: `${divergentTotalPages}-page integrated visual case study`, cn: `${divergentTotalPages} 页整合视觉案例` }
+                    }
+                ],
+                content: () => buildDivergentProjectContent()
+            },
+            writtenTests: {
+                heroImage: writtenTestsCoverImage,
+                heroTheme: '',
+                kicker: {
+                    en: 'SELECTED WRITTEN TEST WORKS',
+                    cn: '部分笔试作品'
+                },
+                title: 'Selected Written Tests (Alibaba, Tencent)',
+                titleCn: '部分笔试作品(阿里、腾讯)',
+                titleHtml: '<span>Selected Written Tests</span><span class="project-hero-title-secondary">Alibaba / Tencent</span>',
+                titleHtmlCn: '<span>部分笔试作品</span><span class="project-hero-title-secondary">阿里 / 腾讯</span>',
+                meta: [
+                    {
+                        label: { en: 'FORMAT', cn: '形式' },
+                        value: { en: `${writtenTestsTotalPages}-page integrated written-test collection`, cn: `${writtenTestsTotalPages} 页整合笔试作品` }
+                    }
+                ],
+                content: () => buildWrittenTestsProjectContent()
+            },
+            buchong: {
+                heroImage: buchongProjectCoverImage,
+                heroTheme: '',
+                kicker: {
+                    en: 'UI DESIGN CASE STUDY',
+                    cn: 'UI 设计案例'
+                },
+                title: 'UI Supplement',
+                titleCn: 'ui补充',
+                titleHtml: '<span>UI</span><span>Supplement</span>',
+                titleHtmlCn: '<span>ui补充</span>',
+                meta: [
+                    {
+                        label: { en: 'FOCUS', cn: '方向' },
+                        value: { en: 'UI Design / Visual Design', cn: 'ui设计 / 视觉设计' }
+                    },
+                    {
+                        label: { en: 'FORMAT', cn: '形式' },
+                        value: { en: `${buchongGalleryImages.length}-page visual case study`, cn: `${buchongGalleryImages.length} 页视觉案例` }
+                    }
+                ],
+                content: () => buildGalleryProjectContent(
+                    buchongGalleryImages,
+                    { en: 'UI Supplement', cn: 'ui补充' },
+                    '',
+                    '',
+                    {
+                        overviewHtml: `
+                            <p class="case-p project-overview-copy">
+                                <span data-lang="en">These two concept projects were earlier group assignments, and I was responsible for the UI/UX interface portion. They include a critical design project that uses religion as a lens to explore the profound impact of digital technology on our lives, as well as a travel and social networking app, presented here as a supplement to the visual work.</span>
+                                <span data-lang="cn">这两个概念项目是早些时间的小组作业，我负责了其中的 ui/ux 界面部分，包含一个对以宗教为例子探讨数字技术对我们生活的深远影响的批判性设计以及一款旅行和社交网络 app，作为视觉部分的补充。</span>
                             </p>
                         `,
                         galleryClass: 'gallery-balanced'
@@ -3295,11 +4518,11 @@
 
         function countProjectTitleLines(title) {
             const spans = Array.from(title.querySelectorAll('span'));
-            if (!spans.length) return 0;
+            const nodes = spans.length ? spans : [title];
 
-            return spans.reduce((total, span) => {
-                const rect = span.getBoundingClientRect();
-                const lineHeight = parseFloat(getComputedStyle(span).lineHeight) || rect.height || 1;
+            return nodes.reduce((total, node) => {
+                const rect = node.getBoundingClientRect();
+                const lineHeight = parseFloat(getComputedStyle(node).lineHeight) || rect.height || 1;
                 return total + Math.max(1, Math.round(rect.height / lineHeight));
             }, 0);
         }
@@ -3311,10 +4534,13 @@
             title.style.fontSize = '';
             let currentFontSize = parseFloat(getComputedStyle(title).fontSize);
             let lineCount = countProjectTitleLines(title);
+            const maxLines = window.innerWidth <= 900 ? 4 : 3;
+            const minFontSize = window.innerWidth <= 900 ? 27 : 37;
+            const shrinkFactor = window.innerWidth <= 900 ? 0.95 : 0.975;
             let guard = 0;
 
-            while (lineCount > 4 && currentFontSize > 34 && guard < 18) {
-                currentFontSize *= 0.94;
+            while (lineCount > maxLines && currentFontSize > minFontSize && guard < 28) {
+                currentFontSize *= shrinkFactor;
                 title.style.fontSize = `${currentFontSize}px`;
                 lineCount = countProjectTitleLines(title);
                 guard += 1;
@@ -3510,7 +4736,6 @@
             const scrollHeight = projectView.scrollHeight - projectView.clientHeight;
             const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
             progressBar.style.width = progress + '%';
-
             updateProjectTopButton();
             updateProjectImageReveal();
         });
@@ -3527,6 +4752,10 @@
             const tl = gsap.timeline({ onComplete: updateProjectImageReveal });
             tl.to(homeView, { scale: 0.95, filter: 'brightness(0.2)', duration: 0.8, ease: 'power3.inOut' });
             tl.fromTo(projectView, { y: '100%' }, { y: '0%', duration: 0.8, ease: 'power3.inOut' });
+        }
+
+        function openPrivateProjectCard(id) {
+            openProject(id);
         }
 
         function scrollProjectToTop() {
