@@ -1095,7 +1095,7 @@
             display: grid;
             grid-template-columns: minmax(96px, max-content) minmax(0, 68ch);
             gap: clamp(18px, 2.2vw, 30px);
-            width: var(--project-section-frame, min(1320px, calc(100vw - 180px)));
+            width: var(--project-section-frame, min(1060px, calc(100vw - 64px)));
             max-width: none;
             margin: 0 0 58px 50%;
             transform: translateX(-50%);
@@ -1199,23 +1199,23 @@
         .sf-gallery-item { margin: 0; }
         .gallery-project-section,
         .divergent-project-section {
-            --project-section-frame: min(1320px, calc(100vw - 180px));
+            --project-section-frame: min(1060px, calc(100vw - 64px));
         }
         .gallery-project-section.gallery-balanced,
         .divergent-project-section.gallery-balanced {
-            --project-section-frame: min(1320px, calc(100vw - 180px));
+            --project-section-frame: min(1060px, calc(100vw - 64px));
         }
         .gallery-project-section.gallery-wide,
         .divergent-project-section.gallery-wide {
-            --project-section-frame: min(1800px, calc(100vw - 40px));
+            --project-section-frame: min(1060px, calc(100vw - 64px));
         }
         .gallery-project-section.gallery-portrait,
         .divergent-project-section.gallery-portrait {
-            --project-section-frame: min(920px, calc(100vw - 260px));
+            --project-section-frame: min(1060px, calc(100vw - 64px));
         }
         .gallery-project-section.gallery-cinematic,
         .divergent-project-section.gallery-cinematic {
-            --project-section-frame: min(1960px, calc(100vw - 24px));
+            --project-section-frame: min(1060px, calc(100vw - 64px));
         }
         .sf-gallery.gallery-balanced { gap: 48px; }
         .sf-gallery.gallery-balanced .sf-gallery-item {
@@ -1260,6 +1260,18 @@
             border-left: none;
             border-right: none;
             box-shadow: 0 20px 48px rgba(0,0,0,0.2);
+        }
+        .gallery-project-section .sf-gallery.gallery-balanced .sf-gallery-item,
+        .gallery-project-section .sf-gallery.gallery-wide .sf-gallery-item,
+        .gallery-project-section .sf-gallery.gallery-portrait .sf-gallery-item,
+        .gallery-project-section .sf-gallery.gallery-cinematic .sf-gallery-item,
+        .divergent-project-section .sf-gallery.gallery-balanced .sf-gallery-item,
+        .divergent-project-section .sf-gallery.gallery-wide .sf-gallery-item,
+        .divergent-project-section .sf-gallery.gallery-portrait .sf-gallery-item,
+        .divergent-project-section .sf-gallery.gallery-cinematic .sf-gallery-item {
+            width: var(--project-section-frame, min(1060px, calc(100vw - 64px)));
+            margin-left: 50%;
+            transform: translateX(-50%);
         }
         .project-overview-copy {
             max-width: 68ch;
@@ -1635,7 +1647,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 14px;
-            width: var(--project-section-frame, min(1320px, calc(100vw - 180px)));
+            width: var(--project-section-frame, min(1060px, calc(100vw - 64px)));
             max-width: none;
             margin: 0 0 24px 50%;
             transform: translateX(-50%);
@@ -2604,7 +2616,7 @@
 
             .case-grid-1 {
                 gap: 24px;
-                width: var(--project-section-frame, min(1120px, calc(100vw - 220px)));
+                width: var(--project-section-frame, min(900px, calc(100vw - 80px)));
                 margin-left: 50%;
                 transform: translateX(-50%);
                 margin-bottom: 86px;
@@ -2698,7 +2710,7 @@
             .divergent-project-heading {
                 grid-template-columns: 1fr;
                 gap: 12px;
-                width: var(--project-section-frame, min(1120px, calc(100vw - 220px)));
+                width: var(--project-section-frame, min(900px, calc(100vw - 80px)));
                 margin: 0 0 20px 50%;
                 transform: translateX(-50%);
             }
@@ -2722,7 +2734,7 @@
             }
             .gallery-project-section.gallery-balanced,
             .divergent-project-section.gallery-balanced {
-                --project-section-frame: min(1120px, calc(100vw - 220px));
+                --project-section-frame: min(900px, calc(100vw - 80px));
             }
 
             .sf-gallery.gallery-wide .sf-gallery-item {
@@ -2730,7 +2742,7 @@
             }
             .gallery-project-section.gallery-wide,
             .divergent-project-section.gallery-wide {
-                --project-section-frame: min(1520px, calc(100vw - 120px));
+                --project-section-frame: min(900px, calc(100vw - 80px));
             }
 
             .sf-gallery.gallery-portrait .sf-gallery-item {
@@ -2738,7 +2750,7 @@
             }
             .gallery-project-section.gallery-portrait,
             .divergent-project-section.gallery-portrait {
-                --project-section-frame: min(760px, calc(100vw - 300px));
+                --project-section-frame: min(900px, calc(100vw - 80px));
             }
 
             .sf-gallery.gallery-cinematic .sf-gallery-item {
@@ -2746,7 +2758,7 @@
             }
             .gallery-project-section.gallery-cinematic,
             .divergent-project-section.gallery-cinematic {
-                --project-section-frame: min(1640px, calc(100vw - 96px));
+                --project-section-frame: min(900px, calc(100vw - 80px));
             }
 
             .p-top {
