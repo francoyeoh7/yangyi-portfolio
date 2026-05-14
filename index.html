@@ -374,7 +374,7 @@
             margin-bottom: 0;
         }
         .w-num { display: none; }
-        .w-title { font-size: 1.8rem; font-weight: 500; margin: 0; line-height: 1.2; padding-right: 38px; }
+        .w-title { font-size: clamp(1.2rem, 1.45vw, 1.8rem); font-weight: 500; margin: 0; line-height: 1.2; padding-right: 38px; white-space: nowrap; overflow-wrap: normal; }
         .w-desc { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
         .w-subtitle {
             font-size: 12px;
@@ -1960,7 +1960,7 @@
             }
 
             .w-title {
-                font-size: 1.4rem;
+                font-size: clamp(1.05rem, 4vw, 1.4rem);
                 line-height: 1.24;
                 padding-right: 30px;
             }
@@ -2399,7 +2399,7 @@
             }
 
             .w-title {
-                font-size: 1.46rem;
+                font-size: clamp(1.08rem, 3.6vw, 1.46rem);
                 line-height: 1.18;
                 padding-right: 32px;
             }
@@ -2905,7 +2905,7 @@
                 </div>
                 <div class="work-item" onclick="openProject('uxagent')">
                     <div class="work-img-container"><img src="/aiagent/封面.png?v=20260409-aiagent-launch-v4" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">AI Agent for UX &amp;<br>Interaction Testing</span><span data-lang="cn">测试用户体验与<br>交互逻辑的AI Agent</span></h2><div class="w-desc"><span data-lang="en">Synthetic users / UX quality assurance</span><span data-lang="cn">合成用户 / 交互体验质检</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">AI Agent for UX &amp; Interaction Testing</span><span data-lang="cn">测试用户体验与交互逻辑的AI Agent</span></h2><div class="w-desc"><span data-lang="en">Synthetic users / UX quality assurance</span><span data-lang="cn">合成用户 / 交互体验质检</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('sf')">
                     <div class="work-img-container"><img src="/projects/shunfeng/fengmian.png" class="work-img work-img--sf-cover"></div>
@@ -2913,23 +2913,23 @@
                 </div>
                 <div class="work-item" onclick="openProject('firm')">
                     <div class="work-img-container"><img src="/projects/law-firm/lawfirmfengmian.jpg" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">04</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Firm Interactive Experience<br>Workflow Optimization</span><span data-lang="cn">律师事务所交互体验<br>流程优化</span></h2><div class="w-desc"><span data-lang="en">Service Design / Legal Workflow</span><span data-lang="cn">服务设计 / 律所流程优化</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">04</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Firm Interactive Experience Workflow Optimization</span><span data-lang="cn">律师事务所交互体验流程优化</span></h2><div class="w-desc"><span data-lang="en">Service Design / Legal Workflow</span><span data-lang="cn">服务设计 / 律所流程优化</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('city')">
                     <div class="work-img-container"><img src="/projects/citycure/citycurefengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">05</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Urban Restorative Design</span><span data-lang="cn">城市疗愈设计</span></h2><div class="w-desc"><span data-lang="en">Academic Research / Urbanism</span><span data-lang="cn">学术研究 / 城市议题</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">05</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Urban Restorative Algorithm Framework Design</span><span data-lang="cn">城市恢复性算法框架设计</span></h2><div class="w-desc"><span data-lang="en">Academic Research / Urbanism</span><span data-lang="cn">学术研究 / 城市议题</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('divergent')">
                     <div class="work-img-container"><img src="/projects/archive-part-two/14.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">06</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Divergent Interaction<br>Experience Design</span><span data-lang="cn">发散型<br>交互体验设计</span></h2><div class="w-desc"><span data-lang="en">HCI / Interaction Experience</span><span data-lang="cn">人机交互 / 交互体验设计</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">06</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Divergent Interaction Experience Design</span><span data-lang="cn">发散型交互体验设计</span></h2><div class="w-desc"><span data-lang="en">HCI / Interaction Experience</span><span data-lang="cn">人机交互 / 交互体验设计</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('writtenTests')">
                     <div class="work-img-container"><img src="/projects/written-tests/cover.png?v=20260509-written-tests-cover-v2" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">07</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Selected Written Tests<br>(Alibaba, Tencent)</span><span data-lang="cn">部分笔试作品(阿里、腾讯)</span></h2><div class="w-desc"><span data-lang="en">Sensitive information removed. Non-confidential assignments.</span><span data-lang="cn">已剔除敏感信息，非保密题目。</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">07</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Selected Written Tests (Alibaba, Tencent)</span><span data-lang="cn">部分笔试作品(阿里、腾讯)</span></h2><div class="w-desc"><span data-lang="en">Sensitive information removed. Non-confidential assignments.</span><span data-lang="cn">已剔除敏感信息，非保密题目。</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('submail')">
                     <div class="work-img-container"><img src="/projects/submail/submailfengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">08</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">08</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
                 </div>
             </div>
 
@@ -2940,7 +2940,7 @@
                 </div>
                 <div class="work-item" onclick="openProject('uxagent')">
                     <div class="work-img-container"><img src="/aiagent/封面.png?v=20260409-aiagent-launch-v4" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">AI Agent for UX &amp;<br>Interaction Testing</span><span data-lang="cn">测试用户体验与<br>交互逻辑的AI Agent</span></h2><div class="w-desc"><span data-lang="en">Synthetic users / UX quality assurance</span><span data-lang="cn">合成用户 / 交互体验质检</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">AI Agent for UX &amp; Interaction Testing</span><span data-lang="cn">测试用户体验与交互逻辑的AI Agent</span></h2><div class="w-desc"><span data-lang="en">Synthetic users / UX quality assurance</span><span data-lang="cn">合成用户 / 交互体验质检</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('sf')">
                     <div class="work-img-container"><img src="/projects/shunfeng/fengmian.png" class="work-img work-img--sf-cover"></div>
@@ -2948,29 +2948,29 @@
                 </div>
                 <div class="work-item" onclick="openProject('firm')">
                     <div class="work-img-container"><img src="/projects/law-firm/lawfirmfengmian.jpg" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">04</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Firm Interactive Experience<br>Workflow Optimization</span><span data-lang="cn">律师事务所交互体验<br>流程优化</span></h2><div class="w-desc"><span data-lang="en">Service Design / Legal Workflow</span><span data-lang="cn">服务设计 / 律所流程优化</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">04</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Firm Interactive Experience Workflow Optimization</span><span data-lang="cn">律师事务所交互体验流程优化</span></h2><div class="w-desc"><span data-lang="en">Service Design / Legal Workflow</span><span data-lang="cn">服务设计 / 律所流程优化</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('city')">
                     <div class="work-img-container"><img src="/projects/citycure/citycurefengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">05</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Urban Restorative Design</span><span data-lang="cn">城市疗愈设计</span></h2><div class="w-desc"><span data-lang="en">Academic Research / Urbanism</span><span data-lang="cn">学术研究 / 城市议题</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">05</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Urban Restorative Algorithm Framework Design</span><span data-lang="cn">城市恢复性算法框架设计</span></h2><div class="w-desc"><span data-lang="en">Academic Research / Urbanism</span><span data-lang="cn">学术研究 / 城市议题</span></div></div>
                 </div>
             </div>
 
             <div class="work-grid work-grid-panel" data-part="part2">
                 <div class="work-item" onclick="openProject('divergent')">
                     <div class="work-img-container"><img src="/projects/archive-part-two/14.png?v=20260323-archive-opt" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">06</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Divergent Interaction<br>Experience Design</span><span data-lang="cn">发散型<br>交互体验设计</span></h2><div class="w-desc"><span data-lang="en">HCI / Interaction Experience</span><span data-lang="cn">人机交互 / 交互体验设计</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">06</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Divergent Interaction Experience Design</span><span data-lang="cn">发散型交互体验设计</span></h2><div class="w-desc"><span data-lang="en">HCI / Interaction Experience</span><span data-lang="cn">人机交互 / 交互体验设计</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('writtenTests')">
                     <div class="work-img-container"><img src="/projects/written-tests/cover.png?v=20260509-written-tests-cover-v2" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">07</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Selected Written Tests<br>(Alibaba, Tencent)</span><span data-lang="cn">部分笔试作品(阿里、腾讯)</span></h2><div class="w-desc"><span data-lang="en">Sensitive information removed. Non-confidential assignments.</span><span data-lang="cn">已剔除敏感信息，非保密题目。</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">07</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">Selected Written Tests (Alibaba, Tencent)</span><span data-lang="cn">部分笔试作品(阿里、腾讯)</span></h2><div class="w-desc"><span data-lang="en">Sensitive information removed. Non-confidential assignments.</span><span data-lang="cn">已剔除敏感信息，非保密题目。</span></div></div>
                 </div>
             </div>
 
             <div class="work-grid work-grid-panel" data-part="part3">
                 <div class="work-item" onclick="openProject('submail')">
                     <div class="work-img-container"><img src="/projects/submail/submailfengmian.png" class="work-img"></div>
-                    <div class="work-info-row"><div class="w-header"><span class="w-num">08</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International<br>Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
+                    <div class="work-info-row"><div class="w-header"><span class="w-num">08</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">SUBMAIL International Gateway Platform Iteration</span><span data-lang="cn">SUBMAIL国际网关平台迭代</span></h2><div class="w-desc"><span data-lang="en">B2B Platform / Cloud Communications</span><span data-lang="cn">B端平台 / 云通信</span></div></div>
                 </div>
             </div>
 
@@ -4140,10 +4140,10 @@
                     en: 'URBAN RESEARCH CASE STUDY',
                     cn: '城市研究案例'
                 },
-                title: 'Urban Restorative Design',
-                titleCn: '城市疗愈设计',
-                titleHtml: '<span>Urban</span><span>Restorative</span><span>Design</span>',
-                titleHtmlCn: '<span>城市</span><span>疗愈性</span><span>设计</span>',
+                title: 'Urban Restorative Algorithm Framework Design',
+                titleCn: '城市恢复性算法框架设计',
+                titleHtml: '<span>Urban</span><span>Restorative Algorithm</span><span>Framework Design</span>',
+                titleHtmlCn: '<span>城市</span><span>恢复性算法</span><span>框架设计</span>',
                 meta: [
                     {
                         label: { en: 'FOCUS', cn: '方向' },
@@ -4172,7 +4172,7 @@
                         ${cityProjectGalleryImages.map((src, index) => `
                             <figure class="sf-gallery-item">
                                 <div class="case-img-box">
-                                    <img src="${src}" class="case-img" alt="${currentLang === 'cn' ? `城市疗愈设计案例研究第 ${index + 1} 页` : `Urban Restorative Design case study page ${index + 1}`}">
+                                    <img src="${src}" class="case-img" alt="${currentLang === 'cn' ? `城市恢复性算法框架设计案例研究第 ${index + 1} 页` : `Urban Restorative Algorithm Framework Design case study page ${index + 1}`}">
                                 </div>
                             </figure>
                         `).join('')}
