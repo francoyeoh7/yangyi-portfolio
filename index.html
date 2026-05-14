@@ -1091,7 +1091,16 @@
                 linear-gradient(90deg, rgba(5, 5, 5, 0.14) 0%, rgba(5, 5, 5, 0) 34%, rgba(5, 5, 5, 0.3) 100%);
         }
         .p-content { max-width: 1200px; margin: 0 auto; padding: 100px 4vw; }
-        .case-grid-1 { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; margin-bottom: 120px; align-items: start; }
+        .case-grid-1 {
+            display: grid;
+            grid-template-columns: minmax(96px, max-content) minmax(0, 68ch);
+            gap: clamp(18px, 2.2vw, 30px);
+            width: var(--project-section-frame, min(1320px, calc(100vw - 180px)));
+            max-width: none;
+            margin: 0 0 58px 50%;
+            transform: translateX(-50%);
+            align-items: start;
+        }
         .case-grid-full { margin-bottom: 120px; position: relative; }
         .sticky-label { position: sticky; top: 50px; font-family: var(--font-tech); color: var(--accent); margin-bottom: 20px; display: block; border-left: 2px solid #FF3B30; padding-left: 10px; }
         .case-h2 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 30px; color: #fff; }
@@ -1188,6 +1197,26 @@
         }
         .sf-gallery { display: flex; flex-direction: column; gap: 40px; }
         .sf-gallery-item { margin: 0; }
+        .gallery-project-section,
+        .divergent-project-section {
+            --project-section-frame: min(1320px, calc(100vw - 180px));
+        }
+        .gallery-project-section.gallery-balanced,
+        .divergent-project-section.gallery-balanced {
+            --project-section-frame: min(1320px, calc(100vw - 180px));
+        }
+        .gallery-project-section.gallery-wide,
+        .divergent-project-section.gallery-wide {
+            --project-section-frame: min(1800px, calc(100vw - 40px));
+        }
+        .gallery-project-section.gallery-portrait,
+        .divergent-project-section.gallery-portrait {
+            --project-section-frame: min(920px, calc(100vw - 260px));
+        }
+        .gallery-project-section.gallery-cinematic,
+        .divergent-project-section.gallery-cinematic {
+            --project-section-frame: min(1960px, calc(100vw - 24px));
+        }
         .sf-gallery.gallery-balanced { gap: 48px; }
         .sf-gallery.gallery-balanced .sf-gallery-item {
             width: min(1320px, calc(100vw - 180px));
@@ -1604,10 +1633,13 @@
         }
         .divergent-project-heading {
             display: grid;
-            grid-template-columns: minmax(110px, 0.32fr) minmax(0, 1fr);
-            gap: 48px;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            width: var(--project-section-frame, min(1320px, calc(100vw - 180px)));
+            max-width: none;
+            margin: 0 0 24px 50%;
+            transform: translateX(-50%);
             align-items: start;
-            margin-bottom: 34px;
         }
         .divergent-project-index {
             font-family: var(--font-tech);
@@ -1616,15 +1648,15 @@
             color: rgba(255,255,255,0.48);
         }
         .divergent-project-title {
-            max-width: 760px;
+            max-width: 900px;
             color: #fff;
             font-size: clamp(2rem, 3.7vw, 3.35rem);
             line-height: 1.05;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
             text-wrap: balance;
         }
         .divergent-project-focus {
-            max-width: 680px;
+            max-width: 760px;
             color: #aab1b4;
             font-size: 1rem;
             line-height: 1.7;
@@ -1747,6 +1779,9 @@
             .divergent-project-heading {
                 grid-template-columns: 1fr;
                 gap: 14px;
+                width: 100%;
+                margin-left: 0;
+                transform: none;
                 margin-bottom: 26px;
             }
             .divergent-project-title {
@@ -2028,6 +2063,9 @@
             .case-grid-1 {
                 grid-template-columns: 1fr;
                 gap: 18px;
+                width: 100%;
+                margin-left: 0;
+                transform: none;
                 margin-bottom: 56px;
             }
 
@@ -2565,7 +2603,10 @@
             }
 
             .case-grid-1 {
-                gap: 44px;
+                gap: 24px;
+                width: var(--project-section-frame, min(1120px, calc(100vw - 220px)));
+                margin-left: 50%;
+                transform: translateX(-50%);
                 margin-bottom: 86px;
             }
 
@@ -2655,9 +2696,11 @@
             }
 
             .divergent-project-heading {
-                grid-template-columns: minmax(92px, 0.28fr) minmax(0, 1fr);
-                gap: 36px;
-                margin-bottom: 28px;
+                grid-template-columns: 1fr;
+                gap: 12px;
+                width: var(--project-section-frame, min(1120px, calc(100vw - 220px)));
+                margin: 0 0 20px 50%;
+                transform: translateX(-50%);
             }
 
             .divergent-project-title {
@@ -2677,17 +2720,33 @@
             .sf-gallery.gallery-balanced .sf-gallery-item {
                 width: min(1120px, calc(100vw - 220px));
             }
+            .gallery-project-section.gallery-balanced,
+            .divergent-project-section.gallery-balanced {
+                --project-section-frame: min(1120px, calc(100vw - 220px));
+            }
 
             .sf-gallery.gallery-wide .sf-gallery-item {
                 width: min(1520px, calc(100vw - 120px));
+            }
+            .gallery-project-section.gallery-wide,
+            .divergent-project-section.gallery-wide {
+                --project-section-frame: min(1520px, calc(100vw - 120px));
             }
 
             .sf-gallery.gallery-portrait .sf-gallery-item {
                 width: min(760px, calc(100vw - 300px));
             }
+            .gallery-project-section.gallery-portrait,
+            .divergent-project-section.gallery-portrait {
+                --project-section-frame: min(760px, calc(100vw - 300px));
+            }
 
             .sf-gallery.gallery-cinematic .sf-gallery-item {
                 width: min(1640px, calc(100vw - 96px));
+            }
+            .gallery-project-section.gallery-cinematic,
+            .divergent-project-section.gallery-cinematic {
+                --project-section-frame: min(1640px, calc(100vw - 96px));
             }
 
             .p-top {
@@ -3605,6 +3664,7 @@
                         </p>
                     `;
             return `
+                <section class="gallery-project-section${galleryClass}">
                 <div class="case-grid-1">
                     <div><span class="sticky-label"><span data-lang="en">01 / OVERVIEW</span><span data-lang="cn">01 / 概述</span></span></div>
                     <div>
@@ -3626,6 +3686,7 @@
                     `).join('')}
                 </div>
                 <div style="height: 100px;"></div>
+                </section>
             `;
         }
 
@@ -3637,7 +3698,7 @@
             const sectionNumber = String(index + 1).padStart(2, '0');
 
             return `
-                <section class="divergent-project-section" id="${project.anchor}">
+                <section class="divergent-project-section${galleryClass}" id="${project.anchor}">
                     <div class="divergent-project-heading">
                         <div class="divergent-project-index">${sectionNumber}</div>
                         <div>
@@ -3738,7 +3799,7 @@
             const altPrefix = resolveLangValue(section.altPrefix);
 
             return `
-                <section class="divergent-project-section written-test-section" id="${section.anchor}">
+                <section class="divergent-project-section written-test-section${galleryClass}" id="${section.anchor}">
                     <div class="divergent-project-heading">
                         <div class="divergent-project-index">${sectionNumber}</div>
                         <div>
