@@ -296,7 +296,7 @@
         }
         .work-grid-panel { display: none; }
         .work-grid-panel.is-active { display: grid; }
-        .work-item { position: relative; cursor: pointer; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); transition: border-color 0.3s, transform 0.3s; }
+        .work-item { position: relative; min-width: 0; cursor: pointer; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02); transition: border-color 0.3s, transform 0.3s; }
         .work-item:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
         .work-img-container { width: 100%; aspect-ratio: 16/10; overflow: hidden; position: relative; border-bottom: 1px solid var(--line); }
         .work-img-container[data-card-num]::before {
@@ -368,6 +368,10 @@
         }
         .work-item:hover .work-img { transform: scale(1.05); filter: grayscale(0%); }
         .work-item:hover .work-img--sf-cover { transform: scale(1.17) translateX(4%); }
+        body.lang-en .w-title {
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
         /* --- 优化后的项目卡片信息层级：提升屏效与精致度 --- */
         .work-info-row { position: relative; padding: 20px 30px 24px; }
         .w-header {
@@ -4075,6 +4079,11 @@
         const neteaseMcAiPosterImage = `/projects/netease-mc-ai/cover-card.jpg${neteaseMcAiVersion}`;
         const bodyScreenVersion = '?v=20260820-body-screen-video-v1';
         const bodyScreenCoverImage = `/projects/body-screen-interaction/cover.jpg${bodyScreenVersion}`;
+        const bodyScreenPresentationVersion = '?v=20260820-body-screen-deck-v1';
+        const bodyScreenPresentationImages = Array.from(
+            { length: 18 },
+            (_, index) => `/projects/body-screen-interaction/presentation/${index + 1}.jpg${bodyScreenPresentationVersion}`
+        );
         const divergentProjectCoverImage = `/projects/archive-part-two/14.png${archivePartTwoVersion}`;
         const divergentSubProjects = [
             {
@@ -4601,7 +4610,7 @@
                 meta: [
                     {
                         label: { en: 'PAGES', cn: '页数' },
-                        value: { en: 'To be added', cn: '待补充' }
+                        value: { en: `${bodyScreenPresentationImages.length}-page visual case study`, cn: `${bodyScreenPresentationImages.length} 页视觉案例` }
                     }
                 ],
                 heroAsideHtml: `
@@ -4615,29 +4624,24 @@
                         </div>
                     </div>
                 `,
-                content: () => `
-                    <section class="gallery-project-section body-screen-project-section">
-                        <div class="case-grid-1">
-                            <div>
-                                <span class="sticky-label">
-                                    <span data-lang="en">01 / OVERVIEW</span>
-                                    <span data-lang="cn">01 / 概述</span>
-                                </span>
-                            </div>
-                            <div>
-                                <h2 class="case-h2">
-                                    <span data-lang="en">Project Overview.</span>
-                                    <span data-lang="cn">项目概述。</span>
-                                </h2>
-                                <p class="case-p project-overview-copy" data-always-expanded="true">
-                                    <span data-lang="en">A big-screen TV paired with phones joining by QR code is becoming a standard structure for living-room games, as seen in products from Netflix, Jackbox, and AirConsole. Yet the phone is still treated as a substitute for buttons, leaving the player’s body outside the game. This project asks whether an ordinary phone, without any additional hardware, can support deeper embodied interaction without pulling attention away from the main screen.<br><br>The outcome is an interaction paradigm that treats the phone as a bodily interface: touch carries movement, device orientation carries gaze, the camera carries reaching, and voice carries presence. Each channel includes an interpretation layer defining what counts as intent and an authorization layer defining what evidence is required before the world responds. The system is paired with ergonomic parameters and falsifiable evaluation metrics, then implemented as a first-person horror exploration demo playable on both TV and desktop.</span>
-                                    <span data-lang="cn">电视大屏 + 手机扫码加入，正在成为客厅游戏的标准结构（奈飞、Jackbox、AirConsole在做）；但手机至今只被当按钮替身，玩家的身体不在游戏里。这个项目研究一个问题：普通手机在不增加任何硬件的前提下，能否承载更深的身体交互，同时不把视线从大屏上抢走。<br><br>产出是一套把手机当身体界面的交互范式：触控承载移动、姿态承载视线、摄像头承载伸手、语音承载在场；每路都有解释层（什么算意图）与授权层（什么证据下世界才回应），配人体工学参数与可证伪的评价指标；并落地为电视与电脑双端可玩的第一人称恐怖探索demo。</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div style="height: 100px;"></div>
-                    </section>
-                `
+                content: () => buildGalleryProjectContent(
+                    bodyScreenPresentationImages,
+                    {
+                        en: 'Turning the Phone into the Body: Embodied Interaction for Big-Screen Games',
+                        cn: '把手机变成身体：大屏游戏的身体交互设计'
+                    },
+                    '',
+                    '',
+                    {
+                        overviewHtml: `
+                            <p class="case-p project-overview-copy" data-always-expanded="true">
+                                <span data-lang="en">A big-screen TV paired with phones joining by QR code is becoming a standard structure for living-room games, as seen in products from Netflix, Jackbox, and AirConsole. Yet the phone is still treated as a substitute for buttons, leaving the player’s body outside the game. This project asks whether an ordinary phone, without any additional hardware, can support deeper embodied interaction without pulling attention away from the main screen.<br><br>The outcome is an interaction paradigm that treats the phone as a bodily interface: touch carries movement, device orientation carries gaze, the camera carries reaching, and voice carries presence. Each channel includes an interpretation layer defining what counts as intent and an authorization layer defining what evidence is required before the world responds. The system is paired with ergonomic parameters and falsifiable evaluation metrics, then implemented as a first-person horror exploration demo playable on both TV and desktop.</span>
+                                <span data-lang="cn">电视大屏 + 手机扫码加入，正在成为客厅游戏的标准结构（奈飞、Jackbox、AirConsole在做）；但手机至今只被当按钮替身，玩家的身体不在游戏里。这个项目研究一个问题：普通手机在不增加任何硬件的前提下，能否承载更深的身体交互，同时不把视线从大屏上抢走。<br><br>产出是一套把手机当身体界面的交互范式：触控承载移动、姿态承载视线、摄像头承载伸手、语音承载在场；每路都有解释层（什么算意图）与授权层（什么证据下世界才回应），配人体工学参数与可证伪的评价指标；并落地为电视与电脑双端可玩的第一人称恐怖探索demo。</span>
+                            </p>
+                        `,
+                        galleryClass: 'gallery-balanced body-screen-project-section'
+                    }
+                )
             },
             uxagent: {
                 heroImage: uxAgentCoverImage,
