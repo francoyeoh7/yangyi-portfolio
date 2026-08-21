@@ -1113,7 +1113,7 @@
         }
         .case-grid-full { margin-bottom: 120px; position: relative; }
         .sticky-label { position: sticky; top: 50px; font-family: var(--font-tech); color: var(--accent); margin-bottom: 20px; display: block; border-left: 2px solid #FF3B30; padding-left: 10px; }
-        .case-h2 { font-size: 2rem; line-height: 1.2; margin-bottom: 20px; color: #fff; }
+        .case-h2 { font-size: 1.55rem; line-height: 1.28; margin-bottom: 24px; color: #fff; }
         .case-p { font-size: 1.1rem; line-height: 1.7; color: #ccc; margin-bottom: 20px; }
         .case-img-box { position: relative; width: 100%; overflow: hidden; border-radius: 4px; border: 1px solid var(--line); clip-path: inset(100% 0 0 0); transition: clip-path 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
         .case-img-box.visible { clip-path: inset(0 0 0 0); }
@@ -1131,16 +1131,23 @@
         .project-hero-main { min-width: 0; }
         .project-hero-aside { min-width: 0; }
         .project-hero-title {
-            font-size: clamp(2.2rem, 3.65vw, 3.8rem);
-            line-height: 0.98;
-            letter-spacing: -0.045em;
+            font-size: clamp(1.9rem, 2.9vw, 3.1rem);
+            line-height: 1.12;
+            letter-spacing: -0.025em;
             color: #fff;
-            max-width: 15.25ch;
+            max-width: 17ch;
             text-wrap: balance;
         }
         .project-hero-title span {
             display: block;
             text-wrap: balance;
+        }
+        .project-hero-title span + span {
+            margin-top: 0.14em;
+        }
+        .project-hero-kicker {
+            margin-bottom: 28px;
+            color: #fff;
         }
         .project-hero-title .project-hero-title-secondary {
             font-size: 0.38em;
@@ -1154,7 +1161,7 @@
             display: flex;
             flex-direction: column;
             gap: 14px;
-            margin-top: 28px;
+            margin-top: 38px;
             max-width: 920px;
         }
         .project-meta-item {
@@ -1204,12 +1211,6 @@
             font-size: 9.5px;
             line-height: 1.2;
             letter-spacing: 0.045em;
-        }
-        .project-hero--netease-mc-ai .project-hero-title {
-            line-height: 1.14;
-        }
-        .project-hero--netease-mc-ai .project-hero-title span + span {
-            margin-top: 0.18em;
         }
         .project-video-frame.netease-mc-ai-video video,
         .project-video-frame.body-screen-video video {
@@ -1936,7 +1937,7 @@
         @media (max-width: 900px) {
             .p-hero { min-height: auto; padding: 86px 5vw 30px; }
             .p-content { padding: 60px 5vw 80px; }
-            .project-hero-title { font-size: clamp(1.78rem, 7.2vw, 2.8rem); max-width: 100%; }
+            .project-hero-title { font-size: clamp(1.6rem, 6.2vw, 2.35rem); line-height: 1.14; max-width: 100%; }
             .project-meta {
                 gap: 12px;
                 margin-top: 34px;
@@ -2285,8 +2286,8 @@
             }
 
             .project-hero-title {
-                line-height: 0.98;
-                max-width: 13.5ch;
+                line-height: 1.14;
+                max-width: 15.5ch;
             }
 
             .project-meta {
@@ -2318,8 +2319,9 @@
             }
 
             .case-h2 {
-                font-size: 1.48rem;
-                margin-bottom: 14px;
+                font-size: 1.22rem;
+                line-height: 1.32;
+                margin-bottom: 18px;
             }
 
             .case-p {
@@ -3239,7 +3241,7 @@
                     <div class="work-info-row"><div class="w-header"><span class="w-num">01</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">NetEase Minecraft AI Assistant Interaction</span><span data-lang="cn">网易我的世界AI助手交互</span></h2><div class="w-desc"><span data-lang="en">Interaction paradigm / AI output architecture / Scenario demos</span><span data-lang="cn">创新交互范式 / AI输出架构 / 场景化demo</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('bodyScreen')">
-                    <div class="work-img-container"><img src="/projects/body-screen-interaction/cover.jpg?v=20260818-body-screen-v1" class="work-img" loading="lazy" decoding="async"></div>
+                    <div class="work-img-container"><img src="/projects/body-screen-interaction/cover.jpg?v=20260821-body-screen-cover-v2" class="work-img" loading="lazy" decoding="async"></div>
                     <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">NetEase Big-Screen Game &amp; Mobile Interaction Innovation</span><span data-lang="cn">网易大屏游戏&amp;手机交互体验创新设计</span></h2><div class="w-desc"><span data-lang="en">Body interaction / Gesture recognition / Ergonomics / Complete demo</span><span data-lang="cn">身体交互、手势识别算法、人体工程学、完整demo</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('tokenx')">
@@ -3282,7 +3284,7 @@
                     <div class="work-info-row"><div class="w-header"><span class="w-num">01</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">NetEase Minecraft AI Assistant Interaction</span><span data-lang="cn">网易我的世界AI助手交互</span></h2><div class="w-desc"><span data-lang="en">Interaction paradigm / AI output architecture / Scenario demos</span><span data-lang="cn">创新交互范式 / AI输出架构 / 场景化demo</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('bodyScreen')">
-                    <div class="work-img-container"><img src="/projects/body-screen-interaction/cover.jpg?v=20260818-body-screen-v1" class="work-img" loading="lazy" decoding="async"></div>
+                    <div class="work-img-container"><img src="/projects/body-screen-interaction/cover.jpg?v=20260821-body-screen-cover-v2" class="work-img" loading="lazy" decoding="async"></div>
                     <div class="work-info-row"><div class="w-header"><span class="w-num">02</span><div class="arrow">↗</div></div><h2 class="w-title"><span data-lang="en">NetEase Big-Screen Game &amp; Mobile Interaction Innovation</span><span data-lang="cn">网易大屏游戏&amp;手机交互体验创新设计</span></h2><div class="w-desc"><span data-lang="en">Body interaction / Gesture recognition / Ergonomics / Complete demo</span><span data-lang="cn">身体交互、手势识别算法、人体工程学、完整demo</span></div></div>
                 </div>
                 <div class="work-item" onclick="openProject('tokenx')">
@@ -4077,9 +4079,9 @@
         );
         const neteaseMcAiCoverImage = `/projects/netease-mc-ai/cover.png${neteaseMcAiVersion}`;
         const neteaseMcAiPosterImage = `/projects/netease-mc-ai/cover-card.jpg${neteaseMcAiVersion}`;
-        const bodyScreenVersion = '?v=20260820-body-screen-video-v1';
+        const bodyScreenVersion = '?v=20260821-body-screen-media-v2';
         const bodyScreenCoverImage = `/projects/body-screen-interaction/cover.jpg${bodyScreenVersion}`;
-        const bodyScreenPresentationVersion = '?v=20260820-body-screen-deck-v1';
+        const bodyScreenPresentationVersion = '?v=20260821-body-screen-deck-v2';
         const bodyScreenPresentationImages = Array.from(
             { length: 18 },
             (_, index) => `/projects/body-screen-interaction/presentation/${index + 1}.jpg${bodyScreenPresentationVersion}`
@@ -5297,7 +5299,7 @@
                 <div class="p-hero-content">
                     <div class="${heroShellClass}">
                         <div class="project-hero-main">
-                            <div class="tech-font" style="margin-bottom: 20px; color: #fff;">
+                <div class="tech-font project-hero-kicker">
                                 <span data-lang="en">${project.kicker.en}</span>
                                 <span data-lang="cn">${project.kicker.cn}</span>
                             </div>
