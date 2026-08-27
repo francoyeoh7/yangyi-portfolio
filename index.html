@@ -1764,6 +1764,155 @@
             transform: translateY(2px);
             box-shadow: 0 3px 0 #263b1c, inset 0 0 0 2px rgba(255,255,255,0.16);
         }
+        .project-link-slot--body-demo {
+            position: relative;
+            overflow: hidden;
+            grid-template-columns: minmax(0, 1fr) auto;
+            margin-bottom: 86px;
+            padding: 30px 30px 28px;
+            border: 1px solid #7c3025;
+            border-radius: 0;
+            background-color: #130d0d;
+            background-image:
+                linear-gradient(90deg, rgba(232, 111, 83, 0.055) 1px, transparent 1px),
+                linear-gradient(rgba(232, 111, 83, 0.04) 1px, transparent 1px),
+                radial-gradient(circle at 13% 88%, rgba(135, 41, 28, 0.3) 0 13%, transparent 13.5%),
+                radial-gradient(circle at 74% 22%, rgba(114, 47, 38, 0.2) 0 10%, transparent 10.5%);
+            background-size: 30px 30px, 30px 30px, auto, auto;
+            box-shadow: 0 8px 0 #090505, 0 24px 60px rgba(0,0,0,0.28);
+        }
+        .project-link-slot--body-demo::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto;
+            height: 5px;
+            background: repeating-linear-gradient(90deg, #c6503e 0 24px, #7e2d25 24px 42px, #e1745d 42px 56px);
+            box-shadow: 0 3px 0 #3c1512;
+        }
+        .project-link-slot--body-demo::after {
+            content: 'BODY / 01';
+            position: absolute;
+            right: 24px;
+            top: 20px;
+            color: rgba(239, 142, 117, 0.42);
+            font-family: var(--font-tech);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            pointer-events: none;
+        }
+        .project-link-slot--body-demo > * {
+            position: relative;
+            z-index: 1;
+        }
+        .body-demo-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            font-family: var(--font-tech);
+            font-size: 10px;
+            line-height: 1;
+            letter-spacing: 0.08em;
+            color: #ed9a84;
+            text-transform: uppercase;
+        }
+        .body-demo-kicker::before {
+            content: '';
+            width: 9px;
+            height: 9px;
+            border: 1px solid #f0b19d;
+            background: #ba4938;
+            box-shadow: 3px 3px 0 #602019;
+        }
+        .body-demo-title {
+            max-width: 30ch;
+            margin-top: 14px;
+            color: #fff0eb;
+            font-family: var(--font-cn-display);
+            font-size: 1.35rem;
+            line-height: 1.35;
+        }
+        .body-demo-flow {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px 22px;
+            max-width: 72ch;
+            margin: 18px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        .body-demo-flow li {
+            display: grid;
+            grid-template-columns: 22px minmax(0, 1fr);
+            gap: 9px;
+            align-items: start;
+            min-width: 0;
+            color: #cdb7b0;
+            font-size: 0.88rem;
+            line-height: 1.58;
+        }
+        .body-demo-flow-index {
+            padding-top: 1px;
+            color: #ec8d75;
+            font-family: var(--font-tech);
+            font-size: 10px;
+            line-height: 1.45;
+        }
+        .body-demo-controls {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 8px;
+            max-width: 76ch;
+            margin-top: 20px;
+        }
+        .body-demo-control {
+            min-width: 0;
+            padding: 10px 11px;
+            border: 1px solid rgba(239, 142, 117, 0.2);
+            background: rgba(255,255,255,0.035);
+        }
+        .body-demo-control-label {
+            display: block;
+            color: #ec987f;
+            font-family: var(--font-tech);
+            font-size: 9px;
+            line-height: 1.2;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+        .body-demo-control strong {
+            display: block;
+            margin-top: 5px;
+            color: #f4ddd5;
+            font-size: 0.86rem;
+            font-weight: 500;
+            line-height: 1.35;
+        }
+        .body-demo-cta {
+            align-self: center;
+            min-width: 160px;
+            justify-content: center;
+            padding: 15px 18px;
+            border: 2px solid #6b241c;
+            border-radius: 0;
+            background: #b74838;
+            color: #fff8f4;
+            box-shadow: 0 5px 0 #4b1712, inset 0 0 0 1px rgba(255,255,255,0.16);
+            font-family: var(--font-cn-tech);
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            text-transform: none;
+            transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+        }
+        .body-demo-cta::before {
+            content: '↗';
+            font-size: 13px;
+        }
+        .body-demo-cta:hover {
+            background: #cf5a46;
+            transform: translateY(2px);
+            box-shadow: 0 3px 0 #4b1712, inset 0 0 0 1px rgba(255,255,255,0.18);
+        }
         .tokenx-section-head {
             max-width: 72ch;
             margin-bottom: 42px;
@@ -1978,6 +2127,14 @@
             .mc-demo-title { font-size: 1.18rem; }
             .mc-demo-notes { font-size: 0.86rem; }
             .mc-demo-cta { width: 100%; }
+            .project-link-slot--body-demo {
+                padding: 26px 22px 24px;
+                margin-bottom: 64px;
+            }
+            .body-demo-title { font-size: 1.18rem; }
+            .body-demo-flow { grid-template-columns: 1fr; gap: 8px; }
+            .body-demo-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .body-demo-cta { width: 100%; }
             .tokenx-section-head {
                 margin-bottom: 28px;
             }
@@ -4662,6 +4819,64 @@
                                 <span data-lang="en">A big-screen TV paired with phones joining by QR code is becoming a standard structure for living-room games, as seen in products from Netflix, Jackbox, and AirConsole. Yet the phone is still treated as a substitute for buttons, leaving the player’s body outside the game. This project asks whether an ordinary phone, without any additional hardware, can support deeper embodied interaction without pulling attention away from the main screen.<br><br>The outcome is an interaction paradigm that treats the phone as a bodily interface: touch carries movement, device orientation carries gaze, the camera carries reaching, and voice carries presence. Each channel includes an interpretation layer defining what counts as intent and an authorization layer defining what evidence is required before the world responds. The system is paired with ergonomic parameters and falsifiable evaluation metrics, then implemented as a first-person horror exploration demo playable on both TV and desktop.</span>
                                 <span data-lang="cn">电视大屏 + 手机扫码加入，正在成为客厅游戏的标准结构（奈飞、Jackbox、AirConsole在做）；但手机至今只被当按钮替身，玩家的身体不在游戏里。这个项目研究一个问题：普通手机在不增加任何硬件的前提下，能否承载更深的身体交互，同时不把视线从大屏上抢走。<br><br>产出是一套把手机当身体界面的交互范式：触控承载移动、姿态承载视线、摄像头承载伸手、语音承载在场；每路都有解释层（什么算意图）与授权层（什么证据下世界才回应），配人体工学参数与可证伪的评价指标；并落地为电视与电脑双端可玩的第一人称恐怖探索demo。</span>
                             </p>
+                        `,
+                        beforeGalleryHtml: `
+                            <div class="project-link-slot project-link-slot--body-demo">
+                                <div>
+                                    <div class="body-demo-kicker">
+                                        <span data-lang="en">CROSS-SCREEN PLAY / DESKTOP + MOBILE</span>
+                                        <span data-lang="cn">跨屏试玩 / 电脑 + 手机</span>
+                                    </div>
+                                    <div class="body-demo-title">
+                                        <span data-lang="en">Use your phone as the body controller.</span>
+                                        <span data-lang="cn">让手机成为身体控制器。</span>
+                                    </div>
+                                    <ol class="body-demo-flow">
+                                        <li>
+                                            <span class="body-demo-flow-index">01</span>
+                                            <span data-lang="en">Open the demo on a desktop or TV.</span>
+                                            <span data-lang="cn">在电脑上打开试玩页。</span>
+                                        </li>
+                                        <li>
+                                            <span class="body-demo-flow-index">02</span>
+                                            <span data-lang="en">Scan the on-screen QR code with your phone camera, then open the link.</span>
+                                            <span data-lang="cn">使用手机相机扫描页面二维码，并在浏览器中打开。</span>
+                                        </li>
+                                        <li>
+                                            <span class="body-demo-flow-index">03</span>
+                                            <span data-lang="en">Allow camera and motion-orientation permissions on the phone.</span>
+                                            <span data-lang="cn">按提示授权手机相机和动作与方向权限。</span>
+                                        </li>
+                                        <li>
+                                            <span class="body-demo-flow-index">04</span>
+                                            <span data-lang="en">When “Enter Game” appears on the desktop, click it to begin.</span>
+                                            <span data-lang="cn">电脑出现“进入游戏”后，点击开始。</span>
+                                        </li>
+                                    </ol>
+                                    <div class="body-demo-controls" aria-label="试玩操作指南">
+                                        <div class="body-demo-control">
+                                            <span class="body-demo-control-label"><span data-lang="en">MOVE</span><span data-lang="cn">移动</span></span>
+                                            <strong><span data-lang="en">Touch move</span><span data-lang="cn">触控移动</span></strong>
+                                        </div>
+                                        <div class="body-demo-control">
+                                            <span class="body-demo-control-label"><span data-lang="en">VIEW</span><span data-lang="cn">视角</span></span>
+                                            <strong><span data-lang="en">Rotate the phone</span><span data-lang="cn">转动手机控制视角</span></strong>
+                                        </div>
+                                        <div class="body-demo-control">
+                                            <span class="body-demo-control-label"><span data-lang="en">GESTURE</span><span data-lang="cn">手势</span></span>
+                                            <strong><span data-lang="en">Gesture recognition</span><span data-lang="cn">手势识别</span></strong>
+                                        </div>
+                                        <div class="body-demo-control">
+                                            <span class="body-demo-control-label"><span data-lang="en">POSTURE</span><span data-lang="cn">姿态</span></span>
+                                            <strong><span data-lang="en">Crouch / stand up</span><span data-lang="cn">下蹲 / 起身</span></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="project-link-pill body-demo-cta" href="https://body.tokenxapp.com:8444" target="_blank" rel="noopener noreferrer">
+                                    <span data-lang="en">Open Desktop Demo</span>
+                                    <span data-lang="cn">打开电脑试玩</span>
+                                </a>
+                            </div>
                         `,
                         galleryClass: 'gallery-balanced body-screen-project-section'
                     }
